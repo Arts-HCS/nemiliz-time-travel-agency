@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La mejor forma de agendar viajes al pasado. Disfruta de nuestra plataforma guiada y sencilla de utilizar.">
+    <meta name="keywords" content="Viajes, Viaje al pasado, Viaje en el tiempo, Seguridad, Pagos, Confort, Vacaciones, Nemiliz">
+    <meta name="author" content="Héctor Arturo Sandoval Cervantes">
+    <title>Nemiliz | Inicio</title>
+
+    <!--Font Awesome link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" 
+    referrerpolicy="no-referrer"/>
+
+    <!-- Google fonts link>-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="../images/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/media-queries.css">
+    <link rel="stylesheet" href="./css/interactions.css">
+
+    <script defer src="./js/animation.js"></script>
+    <script defer src="./js/functionalities.js"></script>
+</head>
+<body>  
+    <header class="header">
+        <nav class="navbar">
+            <a href="#"><h1 class="logo">Nemiliz</h1></a>
+            <input type="checkbox" id="sidebar-active">
+            <label for="sidebar-active" class="open-sidebar-button">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            
+            <label id="overlay" for="sidebar-active"></label>
+            <ul class="nav">
+                <label for="sidebar-active" class="close-sidebar-button">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+                <li><a class="link" href="">Inicio</a></li>
+                <li><a class="link" href="">Agenda tu viaje</a></li>
+                <li><a class="link" href="">Mis viajes</a></li>
+                <li><a class="link" href="">Centro de pagos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="section hero">
+            <div class="overlay"></div>
+            <div class="section-content">
+                <h3 class="hero-title">Tu próxima aventura… ya ocurrió </h3>
+                <p class="big-text">Explora épocas pasadas como si estuvieras allí. Nuestra tecnología de viajes temporales te ofrece experiencias inolvidables, seguras y completamente inmersivas.</p>
+                <a class="black-btn" href="#">Agenda tu viaje<i class="arrow fa-solid fa-arrow-right"></i></a>
+            </div>
+        </section>
+        <section class="section divided">
+            <div class="section-content">
+                <div class="left-content">
+                    <img class="image" src="./images/safe-travel.webp" alt="">
+                </div>
+                <div class="right-content">
+                    <h3 class="small-title">La tecnología temporal más segura del mercado</h3>
+                    <p class="big-text">Viajar a otra época suena arriesgado, pero con nosotros es más seguro que tomar un avión. <br><br>Nuestras cápsulas temporales cuentan con blindaje cronológico, anclaje automático al presente y supervisión en tiempo real por agentes certificados. Además, nuestros protocolos de emergencia multitemporales garantizan que volverás a casa sano, salvo… y en la fecha correcta.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section reviews">
+            <div class="section-content">
+                <div class="section-header">
+                    <h3 class="small-title">Lo que dicen nuestros viajeros</h3>
+                    <p class="big-text">Nuestros viajeros han vivido momentos únicos en la historia. <br>Estas son algunas de sus experiencias.</p>
+                </div>
+                <div class="review-cards">
+                    <div class="review-card">
+                        <div class="card-header">
+                            <img class="review-img" src="./images/natalia-review.png" alt="Foto de Natalia Rios">
+                            <div class="card-header-text">
+                                <h4 class="review-name">Natalia Ríos</h4>
+                                <p class="review-data">Directora de operaciones en ChronoLogistics</p>
+                            </div>
+                        </div>
+                        <p class="review-content">"Pensé que nada superaría mis vacaciones en Marte, pero viajar al Renacimiento y ver a Leonardo da Vinci pintar fue simplemente increíble. Todo el proceso fue seguro, puntual y muy bien guiado. Volveré… o mejor dicho, ya volví.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="card-header">
+                            <img class="review-img" src="./images/alan-review.png" alt="Foto de Alan Mendoza">
+                            <div class="card-header-text">
+                                <h4 class="review-name">Alan Mendoza</h4>
+                                <p class="review-data">Historiador independiente</p>
+                            </div>
+                        </div>
+                        <p class="review-content">"Esta empresa no solo me permitió observar el pasado, me hizo sentir parte de él. Como historiador, agradezco la precisión y el respeto con el que se manejan las épocas visitadas. Una experiencia transformadora y educativa."</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="card-header">
+                            <img class="review-img" src="./images/sofia-review.png" alt="Foto de Sofia Alvarez">
+                            <div class="card-header-text">
+                                <h4 class="review-name">Sofía Álvarez</h4>
+                                <p class="review-data">CEO de NovaTech Robotics</p>
+                            </div>
+                        </div>
+                        <p class="review-content">"Viajar a 1983 y ver el nacimiento de la computación personal cambió por completo la visión de mi empresa. Es como hacer una investigación de mercado… en tiempo real. Excelente atención, máxima seguridad y tecnología de otro nivel."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section divided inverted">
+            <div class="section-content">
+                <div class="left-content">
+                    <h3 class="small-title">Certificados por la Autoridad Temporal Internacional</h3>
+                    <p class="big-text">Nuestra empresa opera con licencia oficial de la ATI, la máxima entidad global que regula los viajes en el tiempo. Cumplimos con los estándares de integridad histórica, seguridad cronológica y ética cultural. <br><br>Con más de 1,000 viajes certificados sin incidentes, somos la única agencia en Latinoamérica con nivel Omega-9 en turismo temporal.</p>
+                </div>
+                <div class="right-content">
+                    <img class="image" src="./images/ati-logo.webp" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="section voyage">
+            <div class="section-content">
+                <div class="create-panel">
+                    <div class="left-info">
+                        <h5 class="panel-title">Agenda tu viaje</h5>
+                        <p class="panel-text">Comienza por definir tu destino.</p>
+                        <div class="dropdowns-box">
+                            <div id="dropdownDate" class="dropdown">
+                                <p class="dropdown-name">Elige tu fecha de salida</p>
+                                <div class="select">
+                                    <span class="selected">Haz click para elegir</span>
+                                    <div class="caret"></div>
+                                </div>
+                                <ul id="menuDate" class="menu">
+
+                                </ul>
+                            </div>
+                            <div id="dropdownTime" class="dropdown">
+                                <p class="dropdown-name">Escoge tu hora de salida</p>
+                                <div class="select">
+                                    <span class="selected">Haz click para elegir</span>
+                                    <div class="caret"></div>
+                                </div>
+                                <ul id="menuTime" class="menu">
+                                    <li>8:00 AM</li>
+                                    <li>12:00 PM</li>
+                                    <li>16:00 PM</li>
+                                    <li>20:00 PM</li>
+                                </ul>
+                            </div>
+                            <div id="dropdownCountry" class="dropdown">
+                                <p class="dropdown-name">Elige tu país</p>
+                                <div class="select">
+                                    <span class="selected">Haz click para elegir</span>
+                                    <div class="caret"></div>
+                                </div>
+                                <ul id="menuCountry" class="menu">
+                                </ul>
+                            </div>
+                            <div id="dropdownAirport" class="dropdown">
+                                <p class="dropdown-name">Elige tu aeropuerto</p>
+                                <div id="airportSelect" class="select disabled">
+                                    <span id="airportSelected" class="selected">Elige tu país</span>
+                                    <div class="caret"></div>
+                                </div>
+                                <ul id="menuAirport" class="menu">
+                                </ul>
+                            </div>
+                            <button id="firstButton" class="send-button disabled"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div> 
+                        <img class="clock-image" src="./images/clock-guy.webp" alt="Clock image">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section faq-section">
+            <div class="section-header">
+                <h3 class="small-title">Preguntas frecuentes</h3>
+                <p class="big-text">Sabemos que esto no es un viaje cualquiera. Estas son algunas respuestas que pueden ayudarte.</p>
+            </div>
+            <div class="wrapper">
+                <details class="details">
+                    <summary class="summary">¿Hay alguna época a la que no pueda ir?</summary>
+                    <p class="details-text">Sí. Por seguridad, no permitimos viajes a épocas con conflictos activos o eventos altamente inestables como guerras mundiales o pandemias.</p>
+                </details>
+                <details class="details">
+                    <summary class="summary">¿Necesito experiencia previa o entrenamiento?</summary>
+                    <p class="details-text">No. Antes de cada viaje, recibirás una breve sesión de orientación adaptada al destino que elegiste.</p>
+                </details>
+                <details class="details">
+                    <summary class="summary">¿Puedo interactuar con personas del pasado?</summary>
+                    <p class="details-text">Sí, pero con límites. Contamos con protocolos para evitar alteraciones temporales. Todo contacto está supervisado.</p>
+                </details>
+                <details class="details">
+                    <summary class="summary">¿Qué puedo llevar conmigo?</summary>
+                    <p class="details-text">
+                        Solo lo que te proporcionamos. Todo lo demás debe quedarse en nuestro centro temporal por motivos de seguridad histórica.
+                    </p>
+                </details>
+                <details class="details">
+                    <summary class="summary">¿Puedo viajar con alguien más?</summary>
+                    <p class="details-text">Sí, puedes reservar para dos o más personas siempre que el viaje sea al mismo destino y horario.</p>
+                </details>
+                <details class="details">
+                    <summary class="summary">¿Qué pasa si intento cambiar algo del pasado?</summary>
+                    <p class="details-text">Nuestro sistema está diseñado para evitar alteraciones. Si realizas una acción no permitida, el viaje se interrumpe de forma inmediata y segura. Además, nuestros protocolos corrigen cualquier impacto antes de que ocurra una alteración real.</p>
+                </details>
+            </div>
+        </section>
+        <section class="section divided contact">
+            <div class="section-content">
+                <div class="left-content">
+                    <h3 class="small-title">Habla con un guía temporal</h3>
+                    <p class="big-text">¿Tienes problemas agendando tu viaje? <br>Recibe atención personalizada cuanto antes. <br> ¡No pierdas tiempo!</p>
+                </div>
+                <div class="right-content">
+                    <form class="contact-form">
+                        <label for="nombre" class="label">Nombre</label>
+                        <input type="text" id="nombre" placeholder="Ingresa tu nombre...">
+                        <label class="label" for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="Ingresa tu correo electrónico">
+                        <label for="message" class="label">Mensaje</label>
+                        <textarea id="message" placeholder="Escribe tu mensaje aquí..."></textarea>
+                        <button class="send-btn" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="https://www.facebook.com/?locale=es_LA" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/?lang=es" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="page-links">
+                <a class="link" href="">Inicio</a>
+                <a class="link" href="">Agenda tu viaje</a>
+                <a class="link" href="">Mis viajes</a>
+                <a class="link" href="">Centro de pagos</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="copyright-text">Copyright &copy; 2025. Designed by <a class="designer" href="https://www.instagram.com/hector.s.c.a/" target="_blank">Arturo Sandoval</a></p>
+        </div>
+    </footer>
+</body>
+</html>

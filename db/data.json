@@ -1,0 +1,31 @@
+{
+    "México": [
+        "Aeropuerto Internacional Benito Juárez (Ciudad de México)",
+        "Aeropuerto Internacional de Cancún",
+        "Aeropuerto Internacional de Guadalajara",
+        "Aeropuerto Internacional de Monterrey"
+    ],
+    "Argentina":[
+        "Aeropuerto Internacional Ministro Pistarini (Ezeiza, Buenos Aires)",
+        "Aeroparque Jorge Newbery (Buenos Aires)",
+        "Aeropuerto Internacional de Córdoba",
+        "Aeropuerto Internacional de Mendoza"
+    ],
+    "Colombia":[
+        "Aeropuerto Internacional El Dorado (Bogotá)",
+        "Aeropuerto Internacional José María Córdova (Medellín)",
+        "Aeropuerto Internacional Alfonso Bonilla Aragón (Cali)",
+        "Aeropuerto Internacional Rafael Núñez (Cartagena)"
+    ],
+    "Chile":[
+        "Aeropuerto Internacional Arturo Merino Benítez (Santiago)",
+        "Aeropuerto Carriel Sur (Concepción)",
+        "Aeropuerto El Tepual (Puerto Montt)"
+    ],
+    "Brasil":[
+        "Aeropuerto Internacional de São Paulo-Guarulhos",
+        "Aeropuerto Internacional de Río de Janeiro-Galeão",
+        "Aeropuerto Internacional de Brasília",
+        "Aeropuerto Internacional de Confins (Belo Horizonte)"
+    ]
+}

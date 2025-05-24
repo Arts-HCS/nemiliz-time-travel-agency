@@ -317,7 +317,7 @@
 .left-info .clock-image{
     width: 600px;
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     right: 0;
     bottom: 0;
 }
@@ -426,6 +426,10 @@
     text-align: left;
 }
 
+.menu li.hidden-li{
+    display: none;
+}
+
 .active{
     background-color: #ffffff8c;
 }
@@ -438,6 +442,7 @@
 .send-button{
     position: absolute;
     padding: 10px 40px;
+    width: 100px;
     background-color: var(--primary-black-color);
     border-radius: 20px;
     font-size: 1.6rem;
@@ -446,11 +451,27 @@
     left: 0;
     cursor: pointer;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.send-button .btn-text{
+    display: none;
 }
 
 .send-button.disabled{
     opacity: 0.5;
     pointer-events: none;
+}
+
+.send-button.enabled{
+    width: 100%;
+}
+
+.send-button.enabled .btn-text{
+    display: block;
 }
 
 

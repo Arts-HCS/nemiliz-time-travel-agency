@@ -78,7 +78,20 @@ agregarFechas(fechas);
 
 activarDropdown('dropdownTime'); 
 
-let dropdownAirportsActive = false;
+function agregarAeropuertos(paises, data){
+    const menuAeropuertos = document.getElementById('menuAirport');
+    for (let pais of paises){
+        let aeropuertosPais = data[pais];
+        aeropuertosPais.forEach(aeropuerto =>{
+            let li = document.createElement('li');
+            li.innerHTML = aeropuerto;
+            li.className = `hidden-li ${pais}-li`
+            menuAeropuertos.appendChild(li);
+        })
+    }
+    activarDropdown('dropdownAirport');
+}
+
 
 function agregarPaises(listaPaises, data){
     const menuPaises = document.getElementById('menuCountry');
@@ -93,44 +106,20 @@ function agregarPaises(listaPaises, data){
     const airportSelect = document.getElementById('airportSelect');
     const airportSelected = document.getElementById('airportSelected');
     const menuAeropuertos = document.getElementById('menuAirport');
+
     
     optionsPaises.forEach(opPais =>{
         opPais.addEventListener('click', ()=>{
             airportSelect.classList.remove('disabled');
             airportSelected.innerHTML = 'Haz click para elegir';
-            menuAeropuertos.innerHTML = '';
-            let listaAeropuertos = data[opPais.innerHTML];
-
-            for (let aeropuerto of listaAeropuertos){
-                let li = document.createElement('li');
-                li.innerHTML = aeropuerto;
-                menuAeropuertos.appendChild(li);
-            }
-
-            const dropdownAirport = document.getElementById('dropdownAirport')
-            const opcionesAeropuerto = menuAeropuertos.querySelectorAll('li');
-            const selected = airportSelect.querySelector('.selected');
-            const menu = dropdownAirport.querySelector('.menu');
-            const caret = airportSelect.querySelector('.caret');
-
-            opcionesAeropuerto.forEach(option => {
-                option.addEventListener('click', () => {
-                    selected.innerHTML = option.innerHTML;
-                    airportSelect.classList.remove('clicked');
-                    caret.classList.remove('rotate');
-                    menu.classList.remove('open');
-                    opcionesAeropuerto.forEach(op => {
-                        op.classList.remove('active')
-                    });
-                    option.classList.add('active');
-                });
-            });
-
-            if (!dropdownAirportsActive){
-                activarDropdown('dropdownAirport');
-                dropdownAirportsActive = true;
-            };
-
+            let airportOptions = menuAeropuertos.querySelectorAll('li');
+            airportOptions.forEach(airportOp =>{
+                if (airportOp.className == `hidden-li ${opPais.innerHTML}-li`){
+                    airportOp.classList.remove('hidden-li');
+                } else {
+                    airportOp.classList.add('hidden-li')
+                }
+            })
         })
     })
 }
@@ -140,8 +129,43 @@ fetch('./db/data.json')
     .then(res => res.json())
     .then(data =>{
         const paises = Object.keys(data);
+        agregarAeropuertos(paises, data);
         agregarPaises(paises, data);
-        controlarClicks()
+        detectarLi()
     })
 
+
+let fechaDeSalida = "", horaDeSalida = "", paisDeSalida = "", aeropuertoDeSalida = "";
+
+function detectarLi(){
+    const menuOptions = document.querySelectorAll('.menu li');
+    const firstButton = document.getElementById('firstButton');
+    menuOptions.forEach(menuOp=>{
+        menuOp.addEventListener('click', (e)=>{
+            let info = e.currentTarget.parentElement.id;
+            let opcionElegida = menuOp.innerHTML;
+            switch(info){
+                case 'menuDate':
+                    fechaDeSalida = opcionElegida;
+                    break;
+                case 'menuTime':
+                    horaDeSalida = opcionElegida;
+                    break;
+                case 'menuCountry':
+                    paisDeSalida = opcionElegida;
+                    break;
+                case 'menuAirport':
+                    aeropuertoDeSalida = opcionElegida;
+                    break;
+                default:
+                    break;
+            }
+
+            if (fechaDeSalida && horaDeSalida && paisDeSalida && aeropuertoDeSalida){
+                firstButton.classList.remove('disabled');
+                firstButton.classList.add('enabled');
+            }
+        })
+    })
+}
 

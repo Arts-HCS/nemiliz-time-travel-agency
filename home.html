@@ -122,14 +122,14 @@
         <section class="section voyage">
             <div class="section-content">
                 <div class="create-panel">
-                    <div class="left-info">
+                    <div id="panelInfo1" class="main-info">
                         <h5 class="panel-title">Agenda tu viaje</h5>
-                        <p class="panel-text">Comienza por definir tu destino.</p>
+                        <p class="panel-text">Comienza por rellenar tus datos de salida.</p>
                         <div class="dropdowns-box">
                             <div id="dropdownDate" class="dropdown">
                                 <p class="dropdown-name">Elige tu fecha de salida</p>
                                 <div class="select">
-                                    <span class="selected">Haz click para elegir</span>
+                                    <span id="dateSelected" class="selected">Haz click para elegir</span>
                                     <div class="caret"></div>
                                 </div>
                                 <ul id="menuDate" class="menu">
@@ -138,7 +138,7 @@
                             <div id="dropdownTime" class="dropdown">
                                 <p class="dropdown-name">Escoge tu hora de salida</p>
                                 <div class="select">
-                                    <span class="selected">Haz click para elegir</span>
+                                    <span id="timeSelected" class="selected">Haz click para elegir</span>
                                     <div class="caret"></div>
                                 </div>
                                 <ul id="menuTime" class="menu">
@@ -151,7 +151,7 @@
                             <div id="dropdownCountry" class="dropdown">
                                 <p class="dropdown-name">Elige tu país</p>
                                 <div class="select">
-                                    <span class="selected">Haz click para elegir</span>
+                                    <span id="countrySelected"  class="selected">Haz click para elegir</span>
                                     <div class="caret"></div>
                                 </div>
                                 <ul id="menuCountry" class="menu">
@@ -170,6 +170,67 @@
                         </div> 
                         <img class="clock-image" src="./images/clock-guy.webp" alt="Clock image">
                     </div>
+                    <div id="panelInfo2" class="panel-info hidden-panel">
+                        <div class="left-info">
+                            <h5 class="panel-sm-title">Elige tu destino</h5>
+                            <p class="panel-sm-text">Conoce más eligiendo una era y región del mundo.</p>
+                            <div class="dropdowns-box column-box">
+                                <div id="dropdownEra" class="dropdown">
+                                    <p class="dropdown-name">Era de la historia</p>
+                                    <div class="select">
+                                        <span class="selected">Haz click para elegir</span>
+                                        <div class="caret"></div>
+                                    </div>
+                                    <ul id="menuEra" class="menu"></ul>
+                                </div>
+                                <div id="dropdownRegion" class="dropdown">
+                                    <p class="dropdown-name">Región del mundo</p>
+                                    <div class="select">
+                                        <span class="selected">Haz click para elegir</span>
+                                        <div class="caret"></div>
+                                    </div>
+                                    <ul id="menuRegion" class="menu"></ul>
+                                </div>
+                            </div>
+                            <div class="panel-function-btns">
+                                <button id="returnBtn1" class="panel-btn"><i class="fa-solid fa-arrow-left"></i>Regresar</button>
+                            </div>
+                        </div>
+                        <div class="right-info"></div>
+                    </div>
+                </div>
+                <div id="panelInfo3" class="little-panel hidden-panel">
+                    <div class="little-panel-header">
+                        <h5 class="lt-panel-title">Elige tus horas de viaje</h5>
+                        <p class="lt-panel-text">Visualiza tu hora de salida y de regreso.</p>
+                        <span class="bold-text">Elige un máximo de 24 horas</span>
+                    </div>
+                    <div class="little-panel-times">
+                        <div class="left-column">
+                            <label for="travelHours">Horas de viaje</label>
+                            <input class="travel-hours" type="number" id="travelHours">
+                        </div>
+                        <div class="center-column">
+                            <div class="top-info">
+                                <label for="depHour">Hora de salida</label>
+                                <input class="travel-times" type="text" id="depHour" readonly>
+                            </div>
+                            <div class="bottom-info">
+                                <label for="arrHour">Hora de regreso</label>
+                                <input class="travel-times hidden-input" type="text" id="arrHour" readonly>
+                            </div>
+                        </div>
+                        <div class="right-column">
+                            <div class="top-info">
+                                <label for="depDay">Día de salida</label>
+                                <input class="travel-days" type="text" id="depDay" readonly>
+                            </div>
+                            <div class="bottom-info">
+                                <label for="arrDay">Día de regreso</label>
+                                <input class="travel-days hidden-input" type="text" id="arrDay" value="Escoge tus horas de viaje" readonly>
+                            </div>
+                        </div>
+                    </div>                    
                 </div>
             </div>
         </section>

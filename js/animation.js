@@ -50,13 +50,12 @@ function crearFechas(dias, meses){
     for (let i = 0; i < 5; i++){
         let date = new Date();
         date.setDate(date.getDate()+i);
-
         const dia = dias[date.getDay()];
         const fecha = date.getDate();
         const mes = meses[date.getMonth()];
         const year = date.getFullYear();
 
-        let op = `${dia} ${fecha} de ${mes}, ${year}`;
+        let op = `${dia} ${fecha} de ${mes} ${year}`;
         opcionesFechas.push(op);
     };
     return opcionesFechas;
@@ -124,6 +123,7 @@ function agregarPaises(listaPaises, data){
     })
 }
 
+let firstPanelProcess = false;
 
 fetch('./db/data.json')
     .then(res => res.json())
@@ -135,37 +135,120 @@ fetch('./db/data.json')
     })
 
 
-let fechaDeSalida = "", horaDeSalida = "", paisDeSalida = "", aeropuertoDeSalida = "";
-
 function detectarLi(){
     const menuOptions = document.querySelectorAll('.menu li');
-    const firstButton = document.getElementById('firstButton');
+    
+    let dateConfirmation = false, timeConfirmation = false, countryConfirmation = false, airportConfirmation = false;
+
     menuOptions.forEach(menuOp=>{
         menuOp.addEventListener('click', (e)=>{
             let info = e.currentTarget.parentElement.id;
-            let opcionElegida = menuOp.innerHTML;
             switch(info){
                 case 'menuDate':
-                    fechaDeSalida = opcionElegida;
+                    dateConfirmation = true;
                     break;
                 case 'menuTime':
-                    horaDeSalida = opcionElegida;
+                    timeConfirmation = true;
                     break;
                 case 'menuCountry':
-                    paisDeSalida = opcionElegida;
+                    countryConfirmation = true;
                     break;
                 case 'menuAirport':
-                    aeropuertoDeSalida = opcionElegida;
+                    airportConfirmation = true;
                     break;
                 default:
                     break;
             }
 
-            if (fechaDeSalida && horaDeSalida && paisDeSalida && aeropuertoDeSalida){
+            if (dateConfirmation && timeConfirmation && countryConfirmation && airportConfirmation){
                 firstButton.classList.remove('disabled');
                 firstButton.classList.add('enabled');
             }
         })
-    })
+    });
 }
+
+const firstButton = document.getElementById('firstButton');
+const panel1 = document.getElementById('panelInfo1');
+const panel2 = document.getElementById('panelInfo2');
+const panel3 = document.getElementById('panelInfo3');
+const returnButton1 = document.getElementById('returnBtn1');
+
+let dateSelected, timeSelected, countrySelected, airportSelected;
+
+firstButton.addEventListener('click', ()=>{
+    dateSelected = document.getElementById('dateSelected');
+    timeSelected = document.getElementById('timeSelected');
+    countrySelected = document.getElementById('countrySelected');
+    airportSelected = document.getElementById('airportSelected');
+
+    panel1.classList.add('hidden-panel');
+    panel2.classList.remove('hidden-panel');
+    panel3.classList.remove('hidden-panel');
+
+    const departureHour = document.getElementById('depHour');
+    const departureDay = document.getElementById('depDay');
+
+    departureHour.value = timeSelected.innerHTML;
+    departureDay.value = dateSelected.innerHTML;
+});
+
+const travelHoursInput = document.getElementById('travelHours');
+
+let timeOut;
+travelHoursInput.addEventListener("input", ()=>{
+    clearTimeout(timeOut);
+    timeOut = setTimeout(()=>{
+        let horasASumar = parseInt(travelHoursInput.value) || 0
+
+        if (horasASumar > 24){
+            travelHoursInput.value = 24
+            horasASumar = 24;
+        };
+        let dateValues = dateSelected.innerHTML.split(" ");
+
+        let dateAno = parseInt(dateValues[4]);
+        let dateMes = meses.indexOf(dateValues[3]);
+        let dateDia = parseInt(dateValues[1]);
+        let hora = timeSelected.innerHTML.slice(0,2);
+        let dateHora = parseInt(hora);
+
+        let arrivalDate = new Date(dateAno, dateMes, dateDia, dateHora);
+        arrivalDate.setHours(arrivalDate.getHours()+horasASumar);
+
+        let numLlegada = arrivalDate.getHours();
+        let horaDeLlegada = `${numLlegada}:00 `;
+        if (numLlegada < 12){
+            horaDeLlegada += "AM"
+        } else {
+            horaDeLlegada += "PM"
+        }
+
+        let arrivDay = diasDeLaSemana[arrivalDate.getDay()]
+        let arrivDate = arrivalDate.getDate();
+        let arrivMonth = meses[arrivalDate.getMonth()];
+        let arrivYear = arrivalDate.getFullYear()
+
+        let diaDeLlegada = `${arrivDay} ${arrivDate} de ${arrivMonth} ${arrivYear}`
+
+
+        const arrivalHour = document.getElementById('arrHour');
+        const arrivalDay = document.getElementById('arrDay');
+
+        arrivalHour.value = horaDeLlegada;
+        arrivalHour.classList.remove('hidden-input');
+
+        arrivalDay.value = diaDeLlegada;
+        arrivalDay.classList.remove('hidden-input');
+
+    }, 500)
+});
+    
+
+
+returnButton1.addEventListener('click', ()=>{
+    panel1.classList.remove('hidden-panel');
+    panel2.classList.add('hidden-panel');
+    panel3.classList.add('hidden-panel');
+});
 

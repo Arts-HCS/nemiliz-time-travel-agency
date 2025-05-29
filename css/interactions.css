@@ -122,6 +122,22 @@
     background-color: #81b29a;
     color: var(--primary-black-color);
     box-shadow: 2px 14px 25px #bbdecd88;
-    transform: translateY(-7px);
+    transform: translateY(-2px);
     padding: 10px 60px;
+}
+
+/* -------------------- */
+
+.panel-function-btns .panel-btn:hover{
+    transform: translateY(-2px);
+    width: 90%;
+    background-color: #81b29a;
+    color: var(--primary-black-color);
+    box-shadow: 2px 14px 25px #bbdecd88;
+}
+
+.little-panel-times input:hover{
+    transform: translateY(-2px);
+    box-shadow: 2px 14px 20px #bbdecdb7;
+    border: 2px solid #9bbbac;
 }

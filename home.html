@@ -173,7 +173,7 @@
                     <div id="panelInfo2" class="panel-info hidden-panel">
                         <div class="left-info">
                             <h5 class="panel-sm-title">Elige tu destino</h5>
-                            <p class="panel-sm-text">Conoce más eligiendo una era y región del mundo.</p>
+                            <p class="panel-sm-text">Conoce más eligiendo una era del mundo.</p>
                             <div class="dropdowns-box column-box">
                                 <div id="dropdownEra" class="dropdown">
                                     <p class="dropdown-name">Era de la historia</p>
@@ -183,20 +183,23 @@
                                     </div>
                                     <ul id="menuEra" class="menu"></ul>
                                 </div>
-                                <div id="dropdownRegion" class="dropdown">
-                                    <p class="dropdown-name">Región del mundo</p>
-                                    <div class="select">
-                                        <span class="selected">Haz click para elegir</span>
-                                        <div class="caret"></div>
-                                    </div>
-                                    <ul id="menuRegion" class="menu"></ul>
+                                <div class="hoursCost">
+                                    <p class="dropdown-name">Costo por hora</p>
+                                    <input id="hoursCost" class="hours-cost-input hidden-input" type="text" placeholder="Escoge una era" readonly>
                                 </div>
+                                
                             </div>
                             <div class="panel-function-btns">
                                 <button id="returnBtn1" class="panel-btn"><i class="fa-solid fa-arrow-left"></i>Regresar</button>
                             </div>
                         </div>
-                        <div class="right-info"></div>
+                        <div class="right-info">
+                            <h6 id="panelNombre" class="destination-nombre">Selecciona una era</h6>
+                            <p id="panelEra" class="destination-era">Elige tu destino en el menu a la izquierda</p>
+                            <p id="panelAnaText" class="destination-anacronismo nodisplay"><span id="panelAnacronismo" class="anacronism-percentage nodisplay"></span> de anacronismo</p>
+                            <p id="panelMensaje" class="destination-mensaje nodisplay">Civilizaciones muy diferentes, costumbres lejanas, religiones politeístas, tecnología limitada y modos de vida muy distintos.</p>
+                            <button id="panelBuyBtn" class="destination-buyBtn hidden-input">Agendar viaje</button>
+                        </div>
                     </div>
                 </div>
                 <div id="panelInfo3" class="little-panel hidden-panel">
@@ -242,7 +245,7 @@
             <div class="wrapper">
                 <details class="details">
                     <summary class="summary">¿Hay alguna época a la que no pueda ir?</summary>
-                    <p class="details-text">Sí. Por seguridad, no permitimos viajes a épocas con conflictos activos o eventos altamente inestables como guerras mundiales o pandemias.</p>
+                    <p class="details-text">Sí. Por seguridad, no permitimos viajes a pandemias, puesto que podrían representar un peligro para nuestro presente.</p>
                 </details>
                 <details class="details">
                     <summary class="summary">¿Necesito experiencia previa o entrenamiento?</summary>

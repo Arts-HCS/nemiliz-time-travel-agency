@@ -353,7 +353,7 @@
     position: relative;
 }
 
-.dropdown .dropdown-name{
+.dropdown-name{
     font-size: 1.1rem;
     font-weight: 800;
     text-align: left;
@@ -501,7 +501,61 @@
     flex: 0.7;
     width: 100%;
     height: 100%;
-    padding: 5px;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.right-info .destination-nombre{
+    font-size: 3rem;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: left;
+}
+
+.right-info .destination-era{
+    font-size: 2rem;
+    width: 100%;
+    text-align: left;
+    color: var(--secondary-black-color);
+    margin-bottom: 5rem;
+}
+
+.right-info .destination-anacronismo{
+    margin-top: auto;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.destination-anacronismo .anacronism-percentage{
+    font-weight: 800;
+    font-size: 3.3rem;
+}
+
+.destination-mensaje{
+    width: 450px;
+    font-size: 1.2rem;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.right-info .nodisplay{
+    display: none;
+}
+
+.destination-buyBtn{
+    margin-top: auto;
+    margin-left: auto;
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    background-color: var(--primary-black-color);
+    color: var(--primary-color);
+    box-shadow: 2px 14px 25px #bbdecd88;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 .create-panel .hidden-panel{
@@ -527,14 +581,32 @@
     height: fit-content;
 }
 
+.column-box .hoursCost{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.hoursCost .hours-cost-input{
+    background-color: var(--secondary-color);
+    color: var(--primary-black-color);
+    border: 2px solid #a2c0b2;
+    box-shadow: 2px 14px 20px #bbdecd88;
+    border-radius: 10px;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
 .panel-function-btns{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 20px;
-    margin-top: auto;
     flex-wrap: wrap;
+    margin-top: auto;
 }
 
 .panel-function-btns .panel-btn{
@@ -663,7 +735,7 @@
     transition: var(--transition);
 }
 
-.little-panel-times .hidden-input{
+.hidden-input{
     pointer-events: none;
     opacity: 0.5;
 }

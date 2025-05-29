@@ -136,6 +136,13 @@
     box-shadow: 2px 14px 25px #bbdecd88;
 }
 
+.destination-buyBtn:hover{
+    background-color: #81b29a;
+    color: var(--primary-black-color);
+    box-shadow: 2px 14px 25px #bbdecd88;
+    transform: translateY(-3px);
+}
+
 .little-panel-times input:hover{
     transform: translateY(-2px);
     box-shadow: 2px 14px 20px #bbdecdb7;

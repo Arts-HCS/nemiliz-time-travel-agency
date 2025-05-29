@@ -92,7 +92,7 @@ function agregarAeropuertos(paises, data){
 }
 
 
-function agregarPaises(listaPaises, data){
+function agregarPaises(listaPaises){
     const menuPaises = document.getElementById('menuCountry');
     for (let pais of listaPaises){
         let li = document.createElement('li');
@@ -125,7 +125,7 @@ function agregarPaises(listaPaises, data){
 
 let firstPanelProcess = false;
 
-fetch('./db/data.json')
+fetch('./db/airports.json')
     .then(res => res.json())
     .then(data =>{
         const paises = Object.keys(data);
@@ -204,7 +204,8 @@ travelHoursInput.addEventListener("input", ()=>{
         if (horasASumar > 24){
             travelHoursInput.value = 24
             horasASumar = 24;
-        };
+        } 
+
         let dateValues = dateSelected.innerHTML.split(" ");
 
         let dateAno = parseInt(dateValues[4]);
@@ -243,8 +244,6 @@ travelHoursInput.addEventListener("input", ()=>{
 
     }, 500)
 });
-    
-
 
 returnButton1.addEventListener('click', ()=>{
     panel1.classList.remove('hidden-panel');
@@ -252,3 +251,49 @@ returnButton1.addEventListener('click', ()=>{
     panel3.classList.add('hidden-panel');
 });
 
+function agregarDestinos(destOps, destinationsJSON){
+    const menuEra = document.getElementById('menuEra');
+    const hoursCost = document.getElementById('hoursCost');
+
+    const panelNombre = document.getElementById('panelNombre');
+    const panelEra = document.getElementById('panelEra');
+    const panelAnaText = document.getElementById('panelAnaText');
+    const panelAnacronismo = document.getElementById('panelAnacronismo');
+    const panelMensaje = document.getElementById('panelMensaje');
+    const panelBuyBtn = document.getElementById('panelBuyBtn');
+
+    for (let dest of destOps){
+        let destObject = destinationsJSON[dest];
+        let epoca = destObject["epoca"];
+        let nombre = destObject["nombre"];
+        let anacronismo = destObject["anacronismo"];
+        let mensaje = destObject["mensaje"]
+        let costo = destObject["costo"]
+        let li = document.createElement('li');
+        li.innerHTML = epoca;
+        menuEra.appendChild(li);
+        li.addEventListener('click', ()=>{
+            hoursCost.classList.remove('hidden-input');
+            hoursCost.value = `$${costo} MXN`;
+
+            panelNombre.innerHTML = nombre;
+            panelEra.innerHTML = epoca;
+            panelAnaText.classList.remove('nodisplay')
+            panelAnacronismo.innerHTML = anacronismo;
+            panelAnacronismo.classList.remove('nodisplay')
+            panelMensaje.innerHTML = mensaje;
+            panelMensaje.classList.remove('nodisplay');
+
+            panelBuyBtn.classList.remove('hidden-input')
+        })
+    }
+    activarDropdown('dropdownEra')
+}
+
+
+fetch('./db/destinations.json')
+    .then(resp => resp.json())
+    .then(data =>{
+        let destOps = Object.keys(data)
+        agregarDestinos(destOps, data);
+    })

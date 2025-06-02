@@ -24,13 +24,14 @@
     <link rel="stylesheet" href="./css/media-queries.css">
     <link rel="stylesheet" href="./css/interactions.css">
 
-    <script defer src="./js/animation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="./js/app.js"></script>
     <script defer src="./js/functionalities.js"></script>
 </head>
 <body>  
     <header class="header">
         <nav class="navbar">
-            <a href="#"><h1 class="logo">Nemiliz</h1></a>
+            <a href="#main"><h1 class="logo">Nemiliz</h1></a>
             <input type="checkbox" id="sidebar-active">
             <label for="sidebar-active" class="open-sidebar-button">
                 <i class="fa-solid fa-bars"></i>
@@ -41,20 +42,20 @@
                 <label for="sidebar-active" class="close-sidebar-button">
                     <i class="fa-solid fa-xmark"></i>
                 </label>
-                <li><a class="link" href="">Inicio</a></li>
-                <li><a class="link" href="">Agenda tu viaje</a></li>
+                <li><a class="link" href="#main">Inicio</a></li>
+                <li><a class="link" href="#panelInfo1">Agenda tu viaje</a></li>
                 <li><a class="link" href="">Mis viajes</a></li>
                 <li><a class="link" href="">Centro de pagos</a></li>
             </ul>
         </nav>
     </header>
-    <main class="main">
+    <main id="main" class="main">
         <section class="section hero">
             <div class="overlay"></div>
             <div class="section-content">
                 <h3 class="hero-title">Tu próxima aventura… ya ocurrió </h3>
                 <p class="big-text">Explora épocas pasadas como si estuvieras allí. Nuestra tecnología de viajes temporales te ofrece experiencias inolvidables, seguras y completamente inmersivas.</p>
-                <a class="black-btn" href="#">Agenda tu viaje<i class="arrow fa-solid fa-arrow-right"></i></a>
+                <a class="black-btn" href="#panelInfo1">Agenda tu viaje<i class="arrow fa-solid fa-arrow-right"></i></a>
             </div>
         </section>
         <section class="section divided">
@@ -142,7 +143,7 @@
                                     <div class="caret"></div>
                                 </div>
                                 <ul id="menuTime" class="menu">
-                                    <li>8:00 AM</li>
+                                    <li>08:00 AM</li>
                                     <li>12:00 PM</li>
                                     <li>16:00 PM</li>
                                     <li>20:00 PM</li>
@@ -193,7 +194,8 @@
                                 <button id="returnBtn1" class="panel-btn"><i class="fa-solid fa-arrow-left"></i>Regresar</button>
                             </div>
                         </div>
-                        <div class="right-info">
+                        <div id="imageSite" class="right-info">
+                            <div class="white-overlay"></div>
                             <h6 id="panelNombre" class="destination-nombre">Selecciona una era</h6>
                             <p id="panelEra" class="destination-era">Elige tu destino en el menu a la izquierda</p>
                             <p id="panelAnaText" class="destination-anacronismo nodisplay"><span id="panelAnacronismo" class="anacronism-percentage nodisplay"></span> de anacronismo</p>
@@ -201,7 +203,59 @@
                             <button id="panelBuyBtn" class="destination-buyBtn hidden-input">Agendar viaje</button>
                         </div>
                     </div>
+                    <div id="panelPay" class="panel-pay-info hidden-panel">
+                        <div class="left-details">
+                            <h5 class="panel-title">Detalles del pago</h5>
+                            <div class="travel-details">
+                                <div class="dets">
+                                    <p class="details-text">Salida</p>
+                                    <p id="salidaPago" class="details-sm-text">Viernes 30 de mayo 2025, <span>11:00</span></p>
+                                </div>
+                                <div class="dets">
+                                    <p class="details-text">Llegada</p>
+                                    <p id="llegadaPago" class="details-sm-text">Sábado 31 de mayo 2025 <span>12:00</span></p>
+                                </div>
+                                <div class="dets">
+                                    <p class="details-text">Aeropuerto</p>
+                                    <p id="aeropuertoPago" class="details-sm-text">Chileno el aeropuerto</p>
+                                </div>
+                                <div class="dets">
+                                    <p class="details-text">Era escogida</p>
+                                    <p id="eraPago" class="details-sm-text">La prehistoria pa</p>
+                                </div>
+                            </div>
+                            <button id="returnBtn2" class="panel-btn"><i class="fa-solid fa-arrow-left"></i>Regresar</button>
+                        </div>
+                        <div class="right-details">
+                            <p id="precioViaje" class="precio-viaje">$40000 MXN</p>
+                            <form class="payment-box">
+                                <div class="field">
+                                    <label for="cardName">Nombre completo</label>
+                                    <input class="r-input" type="text" id="cardName" placeholder="Ingrese su nombre" required>
+                                </div>
+                                <div class="field">
+                                    <label for="cardNumber">Numero de tarjeta</label>
+                                    <input class="r-input" type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                </div>
+                                <a class="card-link" href=""><img src="./images/credit-card.png" alt="">¿Añadir tarjeta?</a>
+                                <div class="field spaced-field">
+                                    <label class="small-label" for="cardCVC">CVC</label>
+                                    <input class="small-input" type="number" id="cardCVC" placeholder="000" required>
+                                    <input class="ml small-input" type="number" id="cardMM" placeholder="MM" required>
+                                    <input class="small-input" type="number" id="cardYY" placeholder="YY" required>
+                                </div>
+                                <button id="lastPayBtn" class="pay-button" >Pagar</button>
+                            </form>
+                        </div>
+
+                    </div>
+                    <div id="panelRes" class="message-panel hidden-panel">
+                        <h5 class="big-title">¡Su viaje ha sido programado exitosamente!</h5>  
+                        <p class="big-text">Vea más en su panel de viajes</p>
+                        <a class="black-btn" href="">Acceder al panel</a>
+                    </div>
                 </div>
+                
                 <div id="panelInfo3" class="little-panel hidden-panel">
                     <div class="little-panel-header">
                         <h5 class="lt-panel-title">Elige tus horas de viaje</h5>
@@ -235,6 +289,7 @@
                         </div>
                     </div>                    
                 </div>
+                
             </div>
         </section>
         <section class="section faq-section">
@@ -307,8 +362,9 @@
             </div>
         </div>
         <div class="copyright">
-            <p class="copyright-text">Copyright &copy; 2025. Designed by <a class="designer" href="https://www.instagram.com/hector.s.c.a/" target="_blank">Arturo Sandoval</a></p>
+            <p class="copyright-text">Copyright &copy; 2025. Designed by <a class="designer" href="https://www.instagram.com/itshector.s/" target="_blank">Arturo Sandoval</a></p>
         </div>
     </footer>
+
 </body>
 </html>

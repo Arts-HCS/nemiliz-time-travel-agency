@@ -128,7 +128,7 @@
 
 /* -------------------- */
 
-.panel-function-btns .panel-btn:hover{
+.panel-btn:hover{
     transform: translateY(-2px);
     width: 90%;
     background-color: #81b29a;
@@ -136,10 +136,11 @@
     box-shadow: 2px 14px 25px #bbdecd88;
 }
 
+
+
 .destination-buyBtn:hover{
-    background-color: #81b29a;
-    color: var(--primary-black-color);
-    box-shadow: 2px 14px 25px #bbdecd88;
+    background-color: #191a1d;
+    box-shadow: 2px 14px 25px #00000079;
     transform: translateY(-3px);
 }
 
@@ -147,4 +148,13 @@
     transform: translateY(-2px);
     box-shadow: 2px 14px 20px #bbdecdb7;
     border: 2px solid #9bbbac;
+}
+
+.payment-box .card-link:hover{
+    color: #2e5d47;
+}
+
+.payment-box .pay-button:hover{
+    transform: translateY(-3px);
+    box-shadow: 8px 7px #81b29a;
 }

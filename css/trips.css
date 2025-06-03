@@ -1,0 +1,98 @@
+.main{
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+.trips-record{
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.trips-record .section-header{
+    width: 100%;
+}
+
+.section-header .small-title{
+    color: var(--primary-black-color);
+}
+
+.trips-record .record-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2rem;
+    gap: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.record-box .big-message{
+    width: 100%;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.record-box .info-viaje{
+    width: 100%;
+    border-radius: 10px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 20px;
+}
+
+.info-viaje .left-data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-right: 30px;
+    width: 50%;
+}
+
+.info-viaje .right-data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 30%;
+}
+
+.info-viaje .bold{
+    font-weight: bold;
+}
+
+.info-viaje .action-ops{
+    background-color: yellow;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    background-color: var(--primary-black-color);
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 120px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.action-ops i{
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.action-ops .card-data{
+    font-size: 1rem;
+}

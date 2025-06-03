@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La mejor forma de agendar viajes al pasado. Disfruta de nuestra plataforma guiada y sencilla de utilizar.">
+    <meta name="keywords" content="Viajes, Viaje al pasado, Viaje en el tiempo, Seguridad, Pagos, Confort, Vacaciones, Nemiliz">
+    <meta name="author" content="Héctor Arturo Sandoval Cervantes">
+    <title>Nemiliz | Mis viajes</title>
+
+    <!--Font Awesome link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" 
+    referrerpolicy="no-referrer"/>
+
+    <!-- Google fonts link>-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="../images/log.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/media-queries.css">
+    <link rel="stylesheet" href="../css/interactions.css">
+    <link rel="stylesheet" href="../css/trips.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="../js/trips.js"></script>
+    <script defer src="../js/functionalities.js"></script>
+
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="../home.html"><h1 class="logo">Nemiliz</h1></a>
+            <input type="checkbox" id="sidebar-active">
+            <label for="sidebar-active" class="open-sidebar-button">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            
+            <label id="overlay" for="sidebar-active"></label>
+            <ul class="nav">
+                <label for="sidebar-active" class="close-sidebar-button">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+                <li><a class="link" href="../home.html">Inicio</a></li>
+                <li><a class="link" href="../home.html#panelInfo1">Agenda tu viaje</a></li>
+                <li><a class="link" href="#main">Mis viajes</a></li>
+                <li><a class="link" href="">Centro de pagos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main" class="main">
+        <section class="trips-record">
+            <div class="section-header">
+                <h3 class="small-title">Aquí podrá visualizar sus próximos viajes</h3>
+                <p class="big-text">Conozca más información sobre cada uno, seleccionándolo</p>
+            </div>
+            <div id="recordBox" class="record-box">
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="https://www.facebook.com/?locale=es_LA" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/?lang=es" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="page-links">
+                <a class="link" href="../home.html">Inicio</a>
+                <a class="link" href="../home.html#panelInfo1">Agenda tu viaje</a>
+                <a class="link" href="#main">Mis viajes</a>
+                <a class="link" href="">Centro de pagos</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="copyright-text">Copyright &copy; 2025. Designed by <a class="designer" href="https://www.instagram.com/itshector.s/" target="_blank">Arturo Sandoval</a></p>
+        </div>
+    </footer>
+    
+</body>
+</html>

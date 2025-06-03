@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
-    <link rel="icon" href="../images/logo.png" type="image/x-icon">
+    <link rel="icon" href="./images/log.png" type="image/x-icon">
 
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/styles.css">
@@ -44,7 +44,7 @@
                 </label>
                 <li><a class="link" href="#main">Inicio</a></li>
                 <li><a class="link" href="#panelInfo1">Agenda tu viaje</a></li>
-                <li><a class="link" href="">Mis viajes</a></li>
+                <li><a class="link" href="./pages/info.html">Mis viajes</a></li>
                 <li><a class="link" href="">Centro de pagos</a></li>
             </ul>
         </nav>
@@ -237,7 +237,6 @@
                                     <label for="cardNumber">Numero de tarjeta</label>
                                     <input class="r-input" type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
                                 </div>
-                                <a class="card-link" href=""><img src="./images/credit-card.png" alt="">¿Añadir tarjeta?</a>
                                 <div class="field spaced-field">
                                     <label class="small-label" for="cardCVC">CVC</label>
                                     <input class="small-input" type="number" id="cardCVC" placeholder="000" required>
@@ -252,7 +251,10 @@
                     <div id="panelRes" class="message-panel hidden-panel">
                         <h5 class="big-title">¡Su viaje ha sido programado exitosamente!</h5>  
                         <p class="big-text">Vea más en su panel de viajes</p>
-                        <a class="black-btn" href="">Acceder al panel</a>
+                        <div class="options">
+                            <a class="black-btn" href="./pages/info.html">Acceder al panel</a>
+                            <button id="reAgendar" class="black-btn green-btn">Agendar otro viaje</button>
+                        </div>
                     </div>
                 </div>
                 
@@ -355,9 +357,9 @@
                 <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
             </div>
             <div class="page-links">
-                <a class="link" href="">Inicio</a>
-                <a class="link" href="">Agenda tu viaje</a>
-                <a class="link" href="">Mis viajes</a>
+                <a class="link" href="#main">Inicio</a>
+                <a class="link" href="#panelInfo1">Agenda tu viaje</a>
+                <a class="link" href="./pages/info.html">Mis viajes</a>
                 <a class="link" href="">Centro de pagos</a>
             </div>
         </div>

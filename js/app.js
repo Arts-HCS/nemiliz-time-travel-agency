@@ -370,10 +370,11 @@ function verificarInputs(){
     });
 
     let validNumbers = "1234567890"
+    let validKeys = ["Backspace", "ArrowLeft", "ArrowRight"];
 
     cardNumber.addEventListener('keydown', (e)=>{
         let keyPressed = e.key;
-        if (!validNumbers.includes(keyPressed) && keyPressed !== 'Backspace') {
+        if (!validNumbers.includes(keyPressed) && !validKeys.includes(keyPressed)) {
             e.preventDefault();
         } else if ((cardNumber.value.length === 4 || cardNumber.value.length === 9 || cardNumber.value.length === 14) && keyPressed !== "Backspace"){
             cardNumber.value += "-"
@@ -386,33 +387,33 @@ function verificarInputs(){
     
     cardCVC.addEventListener('keydown', (e)=>{
         let keyPressed = e.key;
-        if (!validNumbers.includes(keyPressed) && keyPressed !== 'Backspace'){
+        if (!validNumbers.includes(keyPressed) && validKeys.includes(keyPressed)){
             e.preventDefault()
         }
 
-        if (cardCVC.value.length == 3 && keyPressed !== "Backspace"){
+        if (cardCVC.value.length == 3 && validKeys.includes(keyPressed)){
             e.preventDefault();
         }
     });
 
     cardMM.addEventListener('keydown', (e) => {
         let keyPressed = e.key;
-        if (!validNumbers.includes(keyPressed) && keyPressed !== 'Backspace') {
+        if (!validNumbers.includes(keyPressed) && validKeys.includes(keyPressed)) {
             e.preventDefault();
         }
     
-        if (cardMM.value.length === 2 && keyPressed !== 'Backspace') {
+        if (cardMM.value.length === 2 && validKeys.includes(keyPressed)) {
             e.preventDefault();
         }
     });
     
     cardYY.addEventListener('keydown', (e) => {
         let keyPressed = e.key;
-        if (!validNumbers.includes(keyPressed) && keyPressed !== 'Backspace') {
+        if (!validNumbers.includes(keyPressed) && validKeys.includes(keyPressed)) {
             e.preventDefault();
         }
     
-        if (cardYY.value.length === 2 && keyPressed !== 'Backspace') {
+        if (cardYY.value.length === 2 && validKeys.includes(keyPressed)) {
             e.preventDefault();
         }
     });
@@ -430,12 +431,12 @@ lastPayButton.addEventListener('click', (e)=>{
     let codigoString = Math.random().toFixed(10);
     let codigoAletaorio = codigoString.slice(2,9);
 
-    let cardMMV = (cardMM.value >= verificationMes) && cardMM.value < 13;
+    let cardMMV = cardMM.value < 13;
     let cardYYV = cardYY.value > verificationYear;
     let cardNumberV = cardNumber.value.length === 19;
     let cardCVCV = cardCVC.value.length === 3;
 
-    if ( cardMMV && cardYYV && cardNumberV && cardCVCV){
+    if (cardYYV && cardMMV && cardNumberV && cardCVCV){
         Swal.fire({
             icon: "success",
             title: "Pago realizado correctamente",
@@ -443,7 +444,8 @@ lastPayButton.addEventListener('click', (e)=>{
             footer: `<p><b>Código: </b>${codigoAletaorio}</p>`
           });
           panelPay.classList.add('hidden-panel');
-          panelRes.classList.remove('hidden-panel')
+          panelRes.classList.remove('hidden-panel');
+          guardarViaje(eraSelected, dateSelected, timeSelected, cardName.value, codigoAletaorio);
 
     } else{
           Swal.fire({
@@ -453,4 +455,26 @@ lastPayButton.addEventListener('click', (e)=>{
           });
     }
 
+})
+
+function guardarViaje(era, fecha, hora, nombreTarjeta, codigo){
+    let contador = parseInt(localStorage.getItem("contador")) || 0;
+    contador += 1;
+
+    let viaje ={
+        era: era,
+        fecha: fecha.innerHTML,
+        hora: hora.innerHTML,
+        nombreTarjeta: nombreTarjeta,
+        codigo: codigo
+    };
+    localStorage.setItem(`viaje${contador}`, JSON.stringify(viaje));
+    localStorage.setItem("contador", contador);
+}
+
+const botonReAgendar = document.getElementById('reAgendar');
+
+botonReAgendar.addEventListener('click', ()=>{
+    panelRes.classList.add('hidden-panel');
+    panel1.classList.remove('hidden-panel')
 })

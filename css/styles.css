@@ -904,22 +904,6 @@
     margin-left: auto;
 }
 
-.payment-box .card-link{
-    margin-left: auto;
-    font-size: 1.1rem;
-    color: #24252a;
-    text-decoration: underline;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-}
-
-.payment-box .card-link img{
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
-}
-
 .payment-box .pay-button{
     width: 200px;
     margin-top: 20px;
@@ -958,6 +942,21 @@
     margin-bottom: 50px;
 }
 
+.message-panel .options{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.black-btn.green-btn{
+    background-color: var(--primary-color);
+    color: var(--primary-black-color);
+    border: 2px solid var(--primary-black-color);
+    font-weight: 500;
+    cursor: pointer;
+}
 
 
 /* --------------------------------- */

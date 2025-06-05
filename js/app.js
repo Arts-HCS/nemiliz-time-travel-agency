@@ -8,6 +8,27 @@ function activarDropdown(dropdownID){
     const options = actualDropdown.querySelectorAll('.menu li');
     const selected = actualDropdown.querySelector('.selected');
 
+    let seleccionGuardada = localStorage.getItem(`${dropdownID}Elegido`);
+    if (seleccionGuardada) {
+        selected.innerHTML = seleccionGuardada;
+        select.classList.remove('disabled')
+        options.forEach(option =>{
+            if (option.innerHTML === seleccionGuardada){
+                option.classList.add('active')
+            }
+        });
+        if (dropdownID === 'dropdownEra'){
+            const costo = localStorage.getItem('costo');
+            const nombre = localStorage.getItem('nombre');
+            const epoca = localStorage.getItem('epoca');
+            const mensaje = localStorage.getItem('mensaje');
+            const anacronismo = localStorage.getItem('anacronismo'); 
+            const imagen = localStorage.getItem('imagen')
+    
+            mostrarDestinoSeleccionado(costo, nombre, epoca, anacronismo, mensaje, imagen);
+        }
+    }
+
     select.addEventListener('click', ()=>{
         otrosDropdowns.forEach(otroDrop =>{
             const selectOtro = otroDrop.querySelector('.select');
@@ -28,6 +49,7 @@ function activarDropdown(dropdownID){
     options.forEach(option =>{
         option.addEventListener('click', ()=>{
             selected.innerHTML = option.innerHTML;
+            localStorage.setItem(`${dropdownID}Elegido`, option.innerHTML)
             select.classList.remove('clicked');
             caret.classList.remove('rotate');
             menu.classList.remove('open');
@@ -125,7 +147,6 @@ function agregarPaises(listaPaises){
     })
 }
 
-let firstPanelProcess = false;
 
 fetch('./db/airports.json')
     .then(res => res.json())
@@ -139,7 +160,15 @@ fetch('./db/airports.json')
 function detectarLi(){
     const menuOptions = document.querySelectorAll('.menu li');
     
-    let dateConfirmation = false, timeConfirmation = false, countryConfirmation = false, airportConfirmation = false;
+    let dateConfirmation = JSON.parse(localStorage.getItem('dateConfirmation')) || false;
+    let timeConfirmation = JSON.parse(localStorage.getItem('timeConfirmation')) || false;
+    let countryConfirmation = JSON.parse(localStorage.getItem('countryConfirmation')) || false;
+    let airportConfirmation = JSON.parse(localStorage.getItem('airportConfirmation')) || false;
+
+    if (dateConfirmation && timeConfirmation && countryConfirmation && airportConfirmation){
+        firstButton.classList.remove('disabled');
+        firstButton.classList.add('enabled');
+    }
 
     menuOptions.forEach(menuOp=>{
         menuOp.addEventListener('click', (e)=>{
@@ -147,15 +176,19 @@ function detectarLi(){
             switch(info){
                 case 'menuDate':
                     dateConfirmation = true;
+                    localStorage.setItem('dateConfirmation', true);
                     break;
                 case 'menuTime':
                     timeConfirmation = true;
+                    localStorage.setItem('timeConfirmation', true);
                     break;
                 case 'menuCountry':
                     countryConfirmation = true;
+                    localStorage.setItem('countryConfirmation', true);
                     break;
                 case 'menuAirport':
                     airportConfirmation = true;
+                    localStorage.setItem('airportConfirmation', true);
                     break;
                 default:
                     break;
@@ -176,7 +209,10 @@ const panel3 = document.getElementById('panelInfo3');
 const panelPay = document.getElementById('panelPay');
 const panelRes = document.getElementById('panelRes');
 const returnButton1 = document.getElementById('returnBtn1');
-const returnButton2 = document.getElementById('returnBtn2')
+const returnButton2 = document.getElementById('returnBtn2');
+
+const travelHoursInput = document.getElementById('travelHours');
+
 
 let dateSelected, timeSelected, countrySelected, airportSelected, diaDeLlegada, horaDeLlegada, eraSelected, horasASumar, costoViaje;
 
@@ -197,13 +233,50 @@ firstButton.addEventListener('click', ()=>{
     departureHour.value = timeSelected.innerHTML;
     departureDay.value = dateSelected.innerHTML;
 
+    let horasGurdadas = localStorage.getItem('horasDeViaje');
+    if (horasGurdadas){
+        travelHoursInput.value = horasGurdadas;
+        setHorario(horasGurdadas, dateSelected);
+    }
 });
 
-const travelHoursInput = document.getElementById('travelHours');
+
 let numerosAdmitidos = "1234567890"
 let timeout;
 const arrivalHour = document.getElementById('arrHour');
 const arrivalDay = document.getElementById('arrDay');
+
+
+function setHorario(input, dateSelected){
+    horasASumar = input
+    let dateValues = dateSelected.innerHTML.split(" ");
+    let selectedAno = dateValues[4];
+    let selectedMes = meses.indexOf(dateValues[3])
+    let selectedDia = dateValues[1]
+    let hora = timeSelected.innerHTML.slice(0,2);
+    let selectedHora = parseInt(hora) + input
+
+    let deRegreso = new Date(selectedAno, selectedMes,  selectedDia,selectedHora);
+
+    let horaRegreso = deRegreso.getHours();
+    horaDeLlegada = `${horaRegreso}:00 `
+    if (horaRegreso <= 12){
+        horaDeLlegada += "AM"
+    } else{
+        horaDeLlegada += "PM"
+    }
+    arrivalHour.value = horaDeLlegada;
+        
+    let diaRegreso = diasDeLaSemana[deRegreso.getDay()];
+    let fechaRegreso = deRegreso.getDate();
+    let mesRegreso = meses[deRegreso.getMonth()];
+    let anioRegreso = deRegreso.getFullYear();
+    diaDeLlegada = `${diaRegreso} ${fechaRegreso} de ${mesRegreso} ${anioRegreso}`;
+    arrivalDay.value = diaDeLlegada;
+
+    arrivalHour.classList.remove('hidden-input');
+    arrivalDay.classList.remove('hidden-input');
+}
 
 travelHoursInput.addEventListener("keydown", (e)=>{
     let chosenKey = e.key;
@@ -226,34 +299,9 @@ travelHoursInput.addEventListener("keydown", (e)=>{
             input = 1;
         }
         horasASumar = input;
-
-        let dateValues = dateSelected.innerHTML.split(" ");
-        let selectedAno = dateValues[4];
-        let selectedMes = meses.indexOf(dateValues[3])
-        let selectedDia = dateValues[1]
-        let hora = timeSelected.innerHTML.slice(0,2);
-        let selectedHora = parseInt(hora) + input
- 
-        let deRegreso = new Date(selectedAno, selectedMes,  selectedDia, selectedHora);
- 
-        let horaRegreso = deRegreso.getHours();
-        horaDeLlegada = `${horaRegreso}:00 `
-        if (horaRegreso <= 12){
-            horaDeLlegada += "AM"
-        } else{
-            horaDeLlegada += "PM"
-        }
-        arrivalHour.value = horaDeLlegada;
+        setHorario(horasASumar, dateSelected);
         
-        let diaRegreso = diasDeLaSemana[deRegreso.getDay()];
-        let fechaRegreso = deRegreso.getDate();
-        let mesRegreso = meses[deRegreso.getMonth()];
-        let anioRegreso = deRegreso.getFullYear();
-        diaDeLlegada = `${diaRegreso} ${fechaRegreso} de ${mesRegreso} ${anioRegreso}`;
-        arrivalDay.value = diaDeLlegada;
-
-        arrivalHour.classList.remove('hidden-input');
-        arrivalDay.classList.remove('hidden-input');
+        localStorage.setItem('horasDeViaje', horasASumar);
 
     }, 500)
     
@@ -268,44 +316,58 @@ returnButton1.addEventListener('click', ()=>{
 const panelBuyBtn = document.getElementById('panelBuyBtn');
 let costo;
 
-function agregarDestinos(destOps, destinationsJSON){
-    const menuEra = document.getElementById('menuEra');
-    const panelNombre = document.getElementById('panelNombre');
-    const panelEra = document.getElementById('panelEra');
-    const panelAnaText = document.getElementById('panelAnaText');
-    const panelAnacronismo = document.getElementById('panelAnacronismo');
-    const panelMensaje = document.getElementById('panelMensaje');
+function mostrarDestinoSeleccionado(costo, nombre, epoca, anacronismo, mensaje, imagen) {
+    panelNombre = document.getElementById('panelNombre');
+    panelEra = document.getElementById('panelEra');
+    panelAnaText = document.getElementById('panelAnaText');
+    panelAnacronismo = document.getElementById('panelAnacronismo');
+    panelMensaje = document.getElementById('panelMensaje');
+    imageSite = document.getElementById('imageSite');
 
-    for (let dest of destOps){
+    eraSelected = epoca;
+    hoursCost.classList.remove('hidden-input');
+    hoursCost.value = `$${costo} MXN`;
+
+    panelNombre.innerHTML = nombre;
+    panelEra.innerHTML = epoca;
+    panelAnaText.classList.remove('nodisplay');
+    panelAnacronismo.innerHTML = anacronismo;
+    panelAnacronismo.classList.remove('nodisplay');
+    panelMensaje.innerHTML = mensaje;
+    panelMensaje.classList.remove('nodisplay');
+    panelBuyBtn.classList.remove('hidden-input');
+
+    imageSite.style.backgroundImage = `url(${imagen})`;
+}
+
+function agregarDestinos(destOps, destinationsJSON) {
+    const menuEra = document.getElementById('menuEra');
+
+    for (let dest of destOps) {
         let destObject = destinationsJSON[dest];
-        const imageSite = document.getElementById('imageSite');
         let epoca = destObject["epoca"];
         let nombre = destObject["nombre"];
         let anacronismo = destObject["anacronismo"];
-        let mensaje = destObject["mensaje"]
-        costo = destObject["costo"]
-        let imagen = destObject["img"]
+        let mensaje = destObject["mensaje"];
+        let costo = destObject["costo"];
+        let imagen = destObject["img"];        
+
         let li = document.createElement('li');
         li.innerHTML = epoca;
         menuEra.appendChild(li);
-        li.addEventListener('click', ()=>{
-            eraSelected = li.innerHTML;
-            hoursCost.classList.remove('hidden-input');
-            hoursCost.value = `$${costo} MXN`;
 
-            panelNombre.innerHTML = nombre;
-            panelEra.innerHTML = epoca;
-            panelAnaText.classList.remove('nodisplay')
-            panelAnacronismo.innerHTML = anacronismo;
-            panelAnacronismo.classList.remove('nodisplay')
-            panelMensaje.innerHTML = mensaje;
-            panelMensaje.classList.remove('nodisplay');
-            panelBuyBtn.classList.remove('hidden-input');
-
-            imageSite.style.backgroundImage = `url(${imagen})`
-        })
+        li.addEventListener('click', () => {
+            localStorage.setItem('costo', costo);
+            localStorage.setItem('nombre', nombre);
+            localStorage.setItem('epoca', epoca);
+            localStorage.setItem('anacronismo', anacronismo);
+            localStorage.setItem('mensaje', mensaje);
+            localStorage.setItem('imagen', imagen);
+            mostrarDestinoSeleccionado(costo, nombre, epoca, anacronismo, mensaje, imagen);
+        });
     }
-    activarDropdown('dropdownEra')
+
+    activarDropdown('dropdownEra');
 }
 
 fetch('./db/destinations.json')
@@ -340,7 +402,9 @@ function cargarInforrmacionPagos(){
     const aeropuertoPago = document.getElementById('aeropuertoPago');
     const eraPago = document.getElementById('eraPago');
     const precioViaje = document.getElementById('precioViaje');
-    costoViaje = costo * horasASumar;
+    let costoDeHora = localStorage.getItem('costo');
+
+    costoViaje = costoDeHora * horasASumar;
 
     precioViaje.innerHTML = `$${costoViaje} MXN`
 
@@ -359,7 +423,6 @@ const cardMM = document.getElementById('cardMM');
 const cardYY = document.getElementById('cardYY');
 
 function verificarInputs(){
-
     let invalidChars = "1234567890,;:-_()/&%$#+*!?¿'{}[]¡°=<>@^|`~" 
 
     cardName.addEventListener('keydown', (e)=>{
@@ -387,33 +450,33 @@ function verificarInputs(){
     
     cardCVC.addEventListener('keydown', (e)=>{
         let keyPressed = e.key;
-        if (!validNumbers.includes(keyPressed) && validKeys.includes(keyPressed)){
+        if (!validNumbers.includes(keyPressed) && !validKeys.includes(keyPressed)){
             e.preventDefault()
         }
 
-        if (cardCVC.value.length == 3 && validKeys.includes(keyPressed)){
+        if (cardCVC.value.length == 3 && !validKeys.includes(keyPressed)){
             e.preventDefault();
         }
     });
 
     cardMM.addEventListener('keydown', (e) => {
         let keyPressed = e.key;
-        if (!validNumbers.includes(keyPressed) && validKeys.includes(keyPressed)) {
+        if (!validNumbers.includes(keyPressed) && !validKeys.includes(keyPressed)) {
             e.preventDefault();
         }
     
-        if (cardMM.value.length === 2 && validKeys.includes(keyPressed)) {
+        if (cardMM.value.length === 2 && !validKeys.includes(keyPressed)) {
             e.preventDefault();
         }
     });
     
     cardYY.addEventListener('keydown', (e) => {
         let keyPressed = e.key;
-        if (!validNumbers.includes(keyPressed) && validKeys.includes(keyPressed)) {
+        if (!validNumbers.includes(keyPressed) && !validKeys.includes(keyPressed)) {
             e.preventDefault();
         }
     
-        if (cardYY.value.length === 2 && validKeys.includes(keyPressed)) {
+        if (cardYY.value.length === 2 && !validKeys.includes(keyPressed)) {
             e.preventDefault();
         }
     });
@@ -472,9 +535,18 @@ function guardarViaje(era, fecha, hora, nombreTarjeta, codigo){
     localStorage.setItem("contador", contador);
 }
 
+function limpiarLocalStorage(){
+    Object.keys(localStorage).forEach(clave =>{
+        if (clave !== 'contador' && !clave.startsWith('viaje')){
+            localStorage.removeItem(clave);
+        }
+    })
+}
+
 const botonReAgendar = document.getElementById('reAgendar');
 
 botonReAgendar.addEventListener('click', ()=>{
     panelRes.classList.add('hidden-panel');
-    panel1.classList.remove('hidden-panel')
+    panel1.classList.remove('hidden-panel');
+    limpiarLocalStorage();
 })

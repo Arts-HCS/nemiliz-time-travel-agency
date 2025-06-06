@@ -1,4 +1,401 @@
+@media screen and (max-width: 1330px){
+    .navbar .logo{
+        font-size: 2.8rem;
+    }
+    .link{
+        font-size: 1.5rem;
+    }
+    .section.hero{
+        height: 90vh;
+        background-position: top;
+    }
+    .overlay{
+        height: 40%;
+    }
+    .section.hero .section-content{
+        margin-top: 1rem;
+    }
+    .hero-title{
+        font-size: 4rem;
+    }
+    .big-text{
+        font-size: 1.5rem;
+    }
+    .black-btn{
+        font-size: 1.3rem;
+    }
+    .section.divided{
+        height: 100vh;
+    }
+    .section.divided .section-content{
+        gap: 60px;
+    }
+    .section.divided .image{
+        width: 450px;
+        height: 450px;
+    }
+    .small-title{
+        font-size: 2.6rem;
+    }
+    .section.divided .big-text{
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+    .section.reviews .section-content .review-cards{
+        gap: 20px;
+    }
+    .review-card{
+        width: 330px;
+        height: 450px;
+        border-radius: 15px;
+    }
+    .review-card .card-header{
+        gap: 25px;
+        height: 100px;
+        margin-bottom: 0;
+    }
+    .review-card .review-img{
+        width: 100px;
+        height: 80px;
+    }
+    .review-card .review-name{
+        font-size: 1.4rem;
+    }
+    .review-card .review-data{
+        font-size: 1.1rem;
+    }
+    .review-card .review-content{
+        margin-top: 40px;
+        line-height: 1.7;
+        font-size: 1.05rem;
+        text-align: left;
+    }
+
+    .section.voyage .section-content .create-panel{
+        height: 550px;
+        padding: 3rem;
+    }
+    .main-info .clock-image{
+        width: 400px;
+        bottom: 20px;
+        right: -60px;
+    }
+    .create-panel .panel-title{
+        font-size: 1.9rem;
+        margin-bottom: 15px;
+    }
+    .create-panel .panel-text{
+        font-size: 1.4rem;
+        margin-bottom: 40px;
+    }
+    .dropdowns-box{
+        gap: 40px;
+        width: 700px;
+    }
+    .dropdown{
+        width: 320px;
+        position: relative;
+    }
+    .dropdown-name{
+        font-size: 1.1rem;
+    }
+    .dropdown .select .caret{
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 8px solid var(--primary-black-color);
+    }  
+    .menu li{
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    .panel-info .left-info{
+        flex: none;
+        width: 350px;
+    }
+    .panel-info .right-info{
+        box-shadow: inset 0px 0 30px #F3F4F2;
+        padding: 2rem;
+        flex: 1;
+        height: 100%;
+        background-size: cover; 
+    }
+    .right-info .white-overlay{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #F3F4F2 20%, transparent 100%);
+    }
+    .right-info .destination-nombre{
+        font-size: 2.6rem;
+    }
+    .right-info .destination-era{
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+    .right-info .destination-anacronismo{
+        font-size: 1.2rem;
+    }
+    .destination-anacronismo .anacronism-percentage{
+        font-size: 3.1rem;
+    }
+    .destination-mensaje{
+        width: 450px;
+        font-size: 1.2rem;
+        text-align: left;
+        line-height: 1.5;
+        z-index: 1;
+    }
+    .destination-buyBtn{
+        margin-top: auto;
+        margin-bottom: -10px;
+    }
+    .panel-sm-title{
+        font-size: 1.8rem;
+        width: fit-content;
+        text-align: left;
+        margin-bottom: 9px;
+    }
+    .little-panel{
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        scroll-margin-top: 520px;
+    }
+    .little-panel .lt-panel-title{
+        font-size: 1.9rem;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .little-panel .lt-panel-text{
+        font-size: 1.3rem;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .little-panel .bold-text{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    .panel-pay-info .left-details{
+        flex: none;
+        height: 100%;
+        width: 300px;
+        padding-right: 20px;
+    }
+    .left-details .panel-title{
+        font-size: 1.8rem;
+    }
+    .left-details .precio-viaje{
+        width: 100%;
+        font-size: 1.4rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .left-details .travel-details{
+        margin-top: 20px;
+    }
+    .panel-pay-info .details-text{
+        font-size: 1.2rem;
+    }
+    .panel-pay-info .details-sm-text{
+        font-size: 1.05rem;
+    }
+    .panel-pay-info .right-details{
+        height: 100%;
+        width: 100%;
+        flex: 1;
+    }
+    .right-details .precio-viaje{
+        font-size: 2.8rem;
+    }
+    .right-details .payment-box{
+        width: 85%;
+        padding: 2rem;
+    }
+    .payment-box .field.spaced-field{
+        gap: 12px;
+    }
+    .section.faq-section .section-header{
+        text-align: center;
+        width: 80%;
+    }
+    .section.divided.contact .contact-form{
+        padding: 3rem;
+    }
+    .contact-form .label{
+        margin-bottom: 15px;
+    }
+    .contact-form .send-btn{
+        padding: 10px 40px;
+        font-size: 1.1rem;
+        color: var(--primary-color);
+        background-color: var(--primary-black-color);
+        border-radius: 10px;
+        margin-left: auto;
+        margin-top: auto;
+        transition: var(--transition);
+        cursor: pointer;
+    }
+    .footer{
+        height: 300px;
+    }
+    .footer-content .social-media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 30px;
+    }
+    .footer-content .social-media a{
+        font-size: 2.2rem;
+    }
+    .footer-content .page-links a{
+        font-size: 1.4rem;
+        color: var(--primary-black-color);
+        margin: 0 20px;
+    }
+    .footer .copyright{
+        font-size: 1.3rem;
+        padding-top: 40px;
+    }
+
+}
+
+@media screen and (max-width: 1200px){
+    .navbar .logo{
+        font-size: 2.7rem;
+    }
+    .link{
+        font-size: 1.4rem;
+    }
+    .section.hero{
+        height: 90vh;
+    }
+    .overlay{
+        height: 40%;
+        bottom: -5px;
+    }
+    .section.hero .section-content{
+        margin-top: 1rem;
+    }
+    .hero-title{
+        font-size: 3.7rem;
+    }
+    .big-text{
+        font-size: 1.4rem;
+    }
+    .black-btn{
+        font-size: 1.3rem;
+    }
+    .section.divided{
+        height: 100vh;
+    }
+    .section.divided .section-content{
+        gap: 60px;
+    }
+    .section.divided .image{
+        width: 450px;
+        height: 450px;
+    }
+    .small-title{
+        font-size: 2.4rem;
+    }
+    .section.divided .big-text{
+        font-size: 1.3rem;
+        line-height: 1.5;
+    }
+    .section.reviews{
+        height: auto;
+    }
+    .section.reviews .section-content .review-cards{
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .review-card{
+        width: 70%;
+        height: 350px;
+    }
+    .review-card .card-header{
+        gap: 20px;
+    }
+    .review-card .review-img{
+        width: 100px;
+        height: 100px;
+    }
+    .review-card .review-name{
+        font-size: 1.6rem;
+    }
+    .review-card .review-data{
+        font-size: 1.2rem;
+    }
+    .review-card .review-content{
+        margin-top: 30px;
+        font-size: 1.1rem;
+    }
+    .section.voyage .section-content .create-panel{
+        height: 550px;
+        padding: 3rem;
+    }
+    .main-info .clock-image{
+        display: none;
+    }
+    .dropdowns-box{
+        row-gap: 40px;
+        column-gap: 70px;
+        width: 100%;
+    }
+    .dropdown{
+        width: 320px;
+        position: relative;
+    }
+    .dropdown-name{
+        font-size: 1.1rem;
+    }
+    .dropdown .select .caret{
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 8px solid var(--primary-black-color);
+    }  
+    .menu li{
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    .send-button.enabled{
+        width: 80%;
+    }
+
+    
+
+    .footer{
+        height: 300px;
+    }
+    .footer-content .social-media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 30px;
+    }
+    .footer-content .social-media a{
+        font-size: 2.1rem;
+    }
+    .footer-content .page-links a{
+        font-size: 1.3rem;
+        color: var(--primary-black-color);
+        margin: 0 20px;
+    }
+    .footer .copyright{
+        font-size: 1.2rem;
+        padding-top: 30px;
+    }
+
+}
+
 @media screen and (max-width: 1175px ) {
+    .navbar.scrolled{
+        height: 75px;
+    }
     .nav{
         flex-direction: column;
         position: fixed;
@@ -63,6 +460,245 @@
         left: 0;
         z-index: 5;
     } 
+    .navbar .logo{
+        font-size: 2.6rem;
+    }
+    .section.hero{
+        height: 95vh;
+    }
+    .overlay{
+        height: 40%;
+    }
+    .hero-title{
+        font-size: 3.1rem;
+    }
+    .big-text{
+        font-size: 1.2rem;
+    }
+    .black-btn{
+        font-size: 1.1rem;
+    }
+    .section.divided .section-content{
+        gap: 40px;
+    }
+    .section.divided .image{
+        width: 370px;
+        height: 370px;
+    }
+    .small-title{
+        font-size: 2.2rem;
+    }
+    .section.divided .big-text{
+        font-size: 1.2rem;
+        line-height: 1.3;
+    }
+    .section.reviews .section-content .review-cards{
+        gap: 20px;
+    }
+    .review-card{
+        width: 600px;
+        height: 250px;
+    }
+    .review-card .card-header{
+        gap: 20px;
+        height: 80px;
+    }
+    .review-card .review-img{
+        width: 70px;
+        height: 70px;
+    }
+    .review-card .review-name{
+        font-size: 1.3rem;
+    }
+    .review-card .review-data{
+        font-size: 1.1rem;
+    }
+    .review-card .review-content{
+        margin-top: 20px;
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+    .create-panel .panel-title{
+        font-size: 1.7rem;
+        margin-bottom: 10px;
+    }
+    .create-panel .panel-text{
+        font-size: 1.2rem;
+    }
+    .dropdowns-box{
+        gap: 40px;
+        width: 100%;
+    }
+    .dropdown{
+        width: 300px;
+    }
+    .dropdown-name{
+        font-size: 1rem;
+    }
+    .send-button.enabled{
+        width: 85%;
+    }
+
+
+    .panel-info .left-info{
+        flex: none;
+        width: 350px;
+    }
+    .panel-info .right-info{
+        box-shadow: inset 0px 0 30px #F3F4F2;
+        padding: 2rem;
+        flex: 1;
+        height: 100%;
+        background-size: cover; 
+    }
+    .right-info .white-overlay{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #F3F4F2 20%, transparent 100%);
+    }
+    .right-info .destination-nombre{
+        font-size: 2.6rem;
+    }
+    .right-info .destination-era{
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+    .right-info .destination-anacronismo{
+        font-size: 1.2rem;
+    }
+    .destination-anacronismo .anacronism-percentage{
+        font-size: 3.1rem;
+    }
+    .destination-mensaje{
+        width: 450px;
+        font-size: 1.2rem;
+        text-align: left;
+        line-height: 1.5;
+        z-index: 1;
+    }
+    .destination-buyBtn{
+        margin-top: auto;
+        margin-bottom: -10px;
+    }
+    .panel-sm-title{
+        font-size: 1.8rem;
+        width: fit-content;
+        text-align: left;
+        margin-bottom: 9px;
+    }
+    .little-panel{
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        scroll-margin-top: 520px;
+    }
+    .little-panel .lt-panel-title{
+        font-size: 1.9rem;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .little-panel .lt-panel-text{
+        font-size: 1.3rem;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .little-panel .bold-text{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    .panel-pay-info .left-details{
+        flex: none;
+        height: 100%;
+        width: 300px;
+        padding-right: 20px;
+    }
+    .left-details .panel-title{
+        font-size: 1.8rem;
+    }
+    .left-details .precio-viaje{
+        width: 100%;
+        font-size: 1.4rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .left-details .travel-details{
+        margin-top: 20px;
+    }
+    .panel-pay-info .details-text{
+        font-size: 1.2rem;
+    }
+    .panel-pay-info .details-sm-text{
+        font-size: 1.05rem;
+    }
+    .panel-pay-info .right-details{
+        height: 100%;
+        width: 100%;
+        flex: 1;
+    }
+    .right-details .precio-viaje{
+        font-size: 2.8rem;
+    }
+    .right-details .payment-box{
+        width: 85%;
+        padding: 2rem;
+    }
+    .payment-box .field.spaced-field{
+        gap: 12px;
+    }
+    .section.faq-section .section-header{
+        text-align: center;
+        width: 80%;
+    }
+    
+
+
+
+    .section.divided.contact .contact-form{
+        padding: 3rem;
+    }
+    .contact-form .label{
+        margin-bottom: 15px;
+    }
+    .contact-form .send-btn{
+        padding: 10px 40px;
+        font-size: 1.1rem;
+        color: var(--primary-color);
+        background-color: var(--primary-black-color);
+        border-radius: 10px;
+        margin-left: auto;
+        margin-top: auto;
+        transition: var(--transition);
+        cursor: pointer;
+    }
+    .footer{
+        height: 300px;
+    }
+    .footer-content .social-media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 30px;
+    }
+    .footer-content .social-media a{
+        font-size: 2.2rem;
+    }
+    .footer-content .page-links a{
+        font-size: 1.4rem;
+        color: var(--primary-black-color);
+        margin: 0 20px;
+    }
+    .footer .copyright{
+        font-size: 1.3rem;
+        padding-top: 40px;
+    }
+
+
+
+
     
 
 }

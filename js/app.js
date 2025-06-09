@@ -549,4 +549,5 @@ botonReAgendar.addEventListener('click', ()=>{
     panelRes.classList.add('hidden-panel');
     panel1.classList.remove('hidden-panel');
     limpiarLocalStorage();
+    location.reload();
 })

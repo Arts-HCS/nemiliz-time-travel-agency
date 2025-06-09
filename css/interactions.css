@@ -132,6 +132,10 @@
     padding: 10px 60px;
 }
 
+.create-panel .reboot-btn:hover{
+    padding: 10px 40px;
+}
+
 /* -------------------- */
 
 .panel-btn:hover{

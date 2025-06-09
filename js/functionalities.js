@@ -18,3 +18,9 @@ document.addEventListener('scroll', ()=>{
     }
 })
 
+const rebootButton = document.getElementById('rebootButton');
+
+rebootButton.addEventListener('click', ()=>{
+    limpiarLocalStorage();
+    location.reload();
+})

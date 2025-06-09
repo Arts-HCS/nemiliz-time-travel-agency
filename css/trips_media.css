@@ -1,0 +1,182 @@
+@media screen and (max-width: 1200px){
+    .trips-record .small-title{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 951px){
+    .trips-record .small-title{
+        width: 100%;
+    }
+    .trips-record .record-box{
+        width: 700px;
+    }
+    .info-viaje .left-data{
+        text-align: left;
+    }
+    .info-viaje .right-data{
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 780px){
+    .trips-record .record-box{
+        width: 500px;
+    }
+    .record-box .info-viaje{
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+    }
+    .info-viaje .action-ops{
+        height: 100px;
+    }
+    .info-viaje .left-data .time-data{
+        font-size: 1rem;
+    }
+    .info-viaje .left-data .destino-data{
+        font-size: 1rem;
+    }
+    .info-viaje .right-data .card-data{
+        font-size: 1rem;
+    }
+
+    .footer-content .social-media {
+        gap: 20px;
+    }
+    .footer-content .social-media a{
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    .footer-content .page-links a{
+        font-size: 1.1rem;
+        margin: 0 7px;
+    }
+    .footer .copyright{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 670px){
+    .footer-content .social-media {
+        gap: 20px;
+    }
+    .footer-content .social-media a{
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    .footer-content .page-links{
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .footer-content .page-links a{
+        font-size: 1.1rem;
+        margin: 0 7px;
+    }
+    .footer .copyright{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    body{
+        margin: 0;
+    }
+    .trips-record{
+        width: 100%;
+        margin-top: -80px;
+    }
+    .trips-record .section-header{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .section-header .small-title{
+        width: 80%;
+    }
+    .section-header .big-text{
+        width: 80%;
+    }
+    .trips-record .record-box{
+        width: 350px;
+    }
+    .record-box .info-viaje{
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .info-viaje .left-data{
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 30px;
+        row-gap: 10px;
+        width: 100%;
+    }
+    .info-viaje .right-data{
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .info-viaje .action-ops{
+        height: 80px;
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .trips-record .record-box{
+        width: 280px;
+    }
+    .info-viaje .left-data{
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 30px;
+        row-gap: 10px;
+        width: 100%;
+    }
+    .info-viaje .right-data{
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .info-viaje .action-ops{
+        height: 70px;
+        width: 140px;
+    }
+    .info-viaje .left-data .time-data{
+        font-size: .95rem;
+    }
+    .info-viaje .left-data .destino-data{
+        font-size: .95rem;
+    }
+    .info-viaje .right-data .card-data{
+        font-size: .95rem;
+    }
+    .action-ops i{
+        font-size: 18px;
+    }
+    .action-ops .card-data{
+        font-size: .9rem;
+    }
+
+}

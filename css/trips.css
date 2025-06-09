@@ -73,7 +73,6 @@
 }
 
 .info-viaje .action-ops{
-    background-color: yellow;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     background-color: var(--primary-black-color);

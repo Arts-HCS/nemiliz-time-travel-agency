@@ -70,7 +70,6 @@
         font-size: 1.05rem;
         text-align: left;
     }
-
     .section.voyage .section-content .create-panel{
         height: 550px;
         padding: 3rem;
@@ -364,9 +363,6 @@
     .send-button.enabled{
         width: 80%;
     }
-
-    
-
     .footer{
         height: 300px;
     }
@@ -518,6 +514,9 @@
         line-height: 1.5;
         font-size: 1rem;
     }
+    .section.voyage .section-content .create-panel{
+        height: auto;
+    }
     .create-panel .panel-title{
         font-size: 1.7rem;
         margin-bottom: 10px;
@@ -530,26 +529,51 @@
         width: 100%;
     }
     .dropdown{
-        width: 300px;
+        width: 280px;
+    }
+    .dropdown .select .selected{
+        font-size: .9rem;
     }
     .dropdown-name{
         font-size: 1rem;
     }
-    .send-button.enabled{
-        width: 85%;
+    .send-button{
+        top: -120px;
+        right: 0;
+        left: auto;
+        bottom: auto;
+        font-size: 1.5rem;
+        width: 30px;
     }
-
-
+    .send-button.enabled{
+        width: 200px;
+    }
+    .create-panel .panel-info{
+        flex-direction: column;
+        scroll-margin-top: 200px;
+        position: relative;
+    }
     .panel-info .left-info{
-        flex: none;
-        width: 350px;
+        width: 100%;
+        height: auto;
+        border: none;
+        margin-bottom: 3rem;
+    }
+    .left-info .dropdowns-box{
+        display: flex;
+        flex-direction: row;
+    }
+    .panel-info .panel-btn{
+        position: absolute;
+        top: 0;
+        right: 0;
     }
     .panel-info .right-info{
+        border: 1px solid var(--primary-black-color);
+        overflow: hidden;
         box-shadow: inset 0px 0 30px #F3F4F2;
-        padding: 2rem;
-        flex: 1;
-        height: 100%;
-        background-size: cover; 
+        flex: none;
+        height: auto;
     }
     .right-info .white-overlay{
         width: 100%;
@@ -557,75 +581,81 @@
         background: linear-gradient(to right, #F3F4F2 20%, transparent 100%);
     }
     .right-info .destination-nombre{
-        font-size: 2.6rem;
+        font-size: 2.1rem;
+        z-index: 0;
     }
     .right-info .destination-era{
-        font-size: 1.8rem;
+        font-size: 1.3rem;
         margin-bottom: 40px;
+        z-index: 0;
     }
     .right-info .destination-anacronismo{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .destination-anacronismo .anacronism-percentage{
-        font-size: 3.1rem;
+        font-size: 2.8rem;
     }
     .destination-mensaje{
         width: 450px;
-        font-size: 1.2rem;
-        text-align: left;
-        line-height: 1.5;
-        z-index: 1;
+        font-size: 1rem;
     }
     .destination-buyBtn{
-        margin-top: auto;
-        margin-bottom: -10px;
+        font-size: 1rem;
     }
     .panel-sm-title{
-        font-size: 1.8rem;
+        font-size: 2rem;
         width: fit-content;
         text-align: left;
         margin-bottom: 9px;
     }
     .little-panel{
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        scroll-margin-top: 520px;
+        scroll-margin-top: 270px;
     }
     .little-panel .lt-panel-title{
-        font-size: 1.9rem;
-        text-align: center;
+        font-size: 1.8rem;
         margin-bottom: 15px;
     }
     .little-panel .lt-panel-text{
-        font-size: 1.3rem;
-        text-align: center;
-        margin-bottom: 25px;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
     }
     .little-panel .bold-text{
-        font-size: 1.2rem;
-        text-align: center;
+        font-size: 1.1rem;
+    }
+    .little-panel .little-panel-times{
+        gap: 10px;
+        flex: none;
+    }
+    .little-panel-times label{
+        font-size: 1.1rem;
+    }   
+    .panel-pay-info{
+        flex-direction: column;
+        position: relative;
     }
     .panel-pay-info .left-details{
         flex: none;
-        height: 100%;
-        width: 300px;
-        padding-right: 20px;
-    }
-    .left-details .panel-title{
-        font-size: 1.8rem;
-    }
-    .left-details .precio-viaje{
+        height: auto;
         width: 100%;
-        font-size: 1.4rem;
-        font-weight: 800;
-        text-align: center;
-        margin-bottom: 20px;
+        padding: 0;
+        border: none;
+        margin-bottom: 1.5rem;
     }
     .left-details .travel-details{
-        margin-top: 20px;
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .panel-pay-info .panel-btn{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .travel-details .dets{
+        width: 300px;
+    }
+    .left-details .panel-title{
+        font-size: 1.9rem;
     }
     .panel-pay-info .details-text{
         font-size: 1.2rem;
@@ -634,71 +664,1152 @@
         font-size: 1.05rem;
     }
     .panel-pay-info .right-details{
-        height: 100%;
-        width: 100%;
-        flex: 1;
+        flex: none;
     }
     .right-details .precio-viaje{
         font-size: 2.8rem;
     }
-    .right-details .payment-box{
-        width: 85%;
-        padding: 2rem;
-    }
     .payment-box .field.spaced-field{
-        gap: 12px;
+        gap: 22px;
     }
-    .section.faq-section .section-header{
+    .section.faq-section .wrapper .details{
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        padding: 18px;
+    }
+    .section.faq-section .wrapper .summary{
+        font-size: 1.1rem;
+    }
+    .section.faq-section .wrapper .details-text{
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+    .section.divided.contact{
+        height: auto;
+        padding: 5rem;
+    }
+    .section.divided.contact .section-content{
+        flex-direction: column;
+        gap: 0;
+    }
+    .section.divided.contact .small-title{
         text-align: center;
-        width: 80%;
-    }
-    
-
-
-
-    .section.divided.contact .contact-form{
-        padding: 3rem;
-    }
-    .contact-form .label{
+        width: 100%;
         margin-bottom: 15px;
     }
-    .contact-form .send-btn{
-        padding: 10px 40px;
-        font-size: 1.1rem;
-        color: var(--primary-color);
-        background-color: var(--primary-black-color);
-        border-radius: 10px;
-        margin-left: auto;
-        margin-top: auto;
-        transition: var(--transition);
-        cursor: pointer;
+    .section.divided.contact .big-text{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
     }
-    .footer{
-        height: 300px;
-    }
-    .footer-content .social-media {
-        display: flex;
+    .section.divided.contact .section-content .right-content{
         align-items: center;
         justify-content: center;
-        gap: 40px;
-        margin-bottom: 30px;
+    }
+    .section.divided.contact .contact-form{
+        width: 60%;
+        height: auto;
+    }
+    .contact-form .label{
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+    }
+    .contact-form input, textarea{
+        font-size: 1rem;
+    }
+    .contact-form .send-btn{
+        font-size: 1rem;
+    }
+    .footer{
+        height: 250px;
+    }
+    .footer-content .social-media {
+        gap: 30px;
+        margin-bottom: 25px;
     }
     .footer-content .social-media a{
-        font-size: 2.2rem;
+        font-size: 1.7rem;
     }
     .footer-content .page-links a{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: var(--primary-black-color);
         margin: 0 20px;
     }
     .footer .copyright{
+        font-size: 1.1rem;
+        padding-top: 20px;
+    }  
+}
+
+@media screen and (max-width: 1000px ) {
+    .navbar .logo{
+        font-size: 2.5rem;
+    }
+    .section.hero{
+        height: 90vh;
+    }
+    .overlay{
+        height: 60%;
+    }
+    .hero-title{
+        font-size: 2.9rem;
+    }
+    .big-text{
+        font-size: 1.17rem;
+        margin-bottom: 30px;
+    }
+    .black-btn{
+        font-size: 1rem;
+        padding: 20px 30px;
+    }
+    .section.divided{
+        height: auto;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    .section.divided .section-content{
+        gap: 60px;
+    }
+    .section.divided .image{
+        width: 330px;
+        height: 330px;
+    }
+    .small-title{
+        font-size: 2rem;
+    }
+    .section.divided .big-text{
+        font-size: 1.2rem;
+        line-height: 1.3;
+    }
+    .section.reviews .section-content .review-cards{
+        gap: 30px;
+    }
+    .review-card{
+        width: 85%;
+        height: auto;
+        padding: 1.5rem;
+    }
+    .review-card .card-header{
+        gap: 10px;
+        height: 80px;
+    }
+    .review-card .review-img{
+        width: 75px;
+        height: 75px;
+        border: 3px solid #000;
+    }
+    .review-card .review-name{
         font-size: 1.3rem;
-        padding-top: 40px;
+    }
+    .review-card .review-data{
+        font-size: 1.1rem;
+    }
+    .review-card .review-content{
+        margin-top: 22px;
+        line-height: 1.4;
+        font-size: 1rem;
+    }
+    .section.voyage{
+        margin-bottom: 3rem;
+    }
+    .section.voyage .section-content .create-panel{
+        height: auto;
+    }
+    .create-panel .panel-title{
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    .create-panel .panel-text{
+        font-size: 1.2rem;
+    }
+    .dropdowns-box{
+        gap: 40px;
+        width: 100%;
+    }
+    .dropdown{
+        width: 280px;
+    }
+    .dropdown .select .selected{
+        font-size: .9rem;
+    }
+    .menu{
+        height: 120px;
+    }
+    .menu li{
+        font-size: .9rem;
+    }
+    .dropdown-name{
+        font-size: 1.1rem;
+    }
+    .send-button{
+        font-size: 1.2rem;
+        width: 30px;
+    }
+    .send-button.enabled{
+        width: 200px;
+    }
+    .panel-info .panel-btn:hover{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 950px ) {
+    .navbar .logo{
+        font-size: 2.4rem;
+    }
+    .section.hero{
+        height: 85vh;
+    }
+    .overlay{
+        height: 70%;
+    }
+    .hero-title{
+        font-size: 2.8rem;
+    }
+    .big-text{
+        font-size: 1.2rem;
+    }
+    .section.divided{
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    .section.divided .section-content{
+        gap: 40px;
+        flex-direction: column;
+        position: relative;
+    }
+    .section.divided .section-content .left-content{
+        flex: none;
+    }
+    .section.divided .section-content .right-content{
+        flex: none;
+    }
+    .section.divided .image{
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        position: absolute;
+        right: .5rem;
+        top: .5rem;
+    }
+    .small-title{
+        font-size: 2rem;
+        width: 80%;
+    }
+    .section.divided .big-text{
+        margin-top: 10px;
+        font-size: 1.2rem;
+        line-height: 1.3;
+    }
+    .section.reviews .section-content .review-cards{
+        gap: 30px;
+    }
+    .section.reviews .section-content .section-header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .review-card{
+        width: 80%;
+        height: auto;
+        padding: 1.5rem;
+    }
+    .section.divided.inverted{
+        height: auto;
+    }
+    .section.divided.inverted .section-content .left-content{
+        flex: none;
+    }
+    .section.divided.inverted .section-content .right-content{
+        flex: none;
+    }
+    .section.divided.inverted .image{
+        top: -20px;
+        right: 0;
+    }
+    .section.faq-section .section-header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .section.divided.contact{
+        height: auto;
+    }
+    .section.divided.contact .contact-form{
+        width: 500px;
+        height: 500px;
+    }
+    .footer-content .social-media {
+        gap: 30px;
+    }
+    .footer .copyright{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 870px ) {
+    .navbar .logo{
+        font-size: 2.3rem;
+    }
+    .section.hero{
+        height: 90vh;
+    }
+    .hero-title{
+        font-size: 2.5rem;
+    }
+    .big-text{
+        font-size: 1.15rem;
+    }
+    .black-btn{
+        font-size: 1rem;
+    }
+    .section.divided .section-content{
+        gap: 30px;
+    }
+    .section.divided .image{
+        width: 110px;
+        height: 110px;
+    }
+    .small-title{
+        font-size: 1.85rem;
+    }
+    .section.divided .big-text{
+        font-size: 1.15rem;
+    }
+    .review-card{
+        width: 80%;
+    }
+    .review-card .card-header{
+        gap: 20px;
+        height: 70px;
+    }
+    .review-card .review-img{
+        width: 70px;
+        height: 70px;
+    }
+    .review-card .review-name{
+        font-size: 1.2rem;
+    }
+    .review-card .review-data{
+        font-size: 1.05rem;
+    }
+    .review-card .review-content{
+        margin-top: 20px;
+        font-size: .95rem;
+    }
+    .section.voyage .section-content .create-panel{
+        width: 640px;
+    }
+    .create-panel .panel-title{
+        font-size: 1.7rem;
+    }
+    .dropdowns-box{
+        width: 500px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .dropdown{
+        width: 250px;
+    }
+    .send-button.enabled{
+        width: 170px;
+    }
+    .send-button{
+        top: -130px;
+        right: -60px;
+    }
+    .left-info .dropdowns-box{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .right-info .white-overlay{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #F3F4F2 30%, transparent 100%);
+    }
+    .right-info .destination-nombre{
+        font-size: 2rem;
+    }
+    .right-info .destination-era{
+        font-size: 1.2rem;
+    }
+    .right-info .destination-anacronismo{
+        font-size: 1rem;
+    }
+    .destination-anacronismo .anacronism-percentage{
+        font-size: 2.5rem;
+    }
+    .destination-mensaje{
+        width: 300px;
+        font-size: .95rem;
+    }
+    .destination-buyBtn{
+        font-size: .95rem;
+    }
+    .little-panel .lt-panel-title{
+        font-size: 1.65rem;
+    }
+    .little-panel .lt-panel-text{
+        font-size: 1.15rem;
+        margin-bottom: 15px;
+    }
+    .little-panel .little-panel-times{
+        flex-direction: column;
+        gap: 30px;
+        width: 80%;
+        margin: 0;
+    }
+    .little-panel-times .center-column{
+        flex-direction: row;
     }
 
+    .left-details .travel-details{
+        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 550px;
+        gap: 30px;
+    }
+    .travel-details .dets{
+        width: 100%;
+    }
+    .panel-pay-info .details-text{
+        font-size: 1.15rem;
+    }
+    .panel-pay-info .details-sm-text{
+        font-size: 1.1rem;
+    }
+    .right-details .precio-viaje{
+        font-size: 2.6rem;
+    }
+    .message-panel .big-title{
+        font-size: 2rem
+    }
+    .message-panel .big-text{
+        font-size: 1.3rem;
+        margin-bottom: 50px;
+    }
+    .message-panel a{
+        font-size: .9rem;
+    }
+    .message-panel button{
+        font-size: .9rem;
+    }    
 
+    .section.faq-section .wrapper{
+        width: 80%;
+    }
+    .section.faq-section .wrapper .details{
+        padding: 15px 20px;
+    }
+    .section.divided.contact .contact-form{
+        width: 80%;
+    }
+}
 
+@media screen and (max-width: 700px ) {
+    .navbar .logo{
+        font-size: 2.2rem;
+    }
+    .section.hero{
+        height: 95vh;
+    }
+    .hero-title{
+        font-size: 2.5rem;
+    }
+    .big-text{
+        font-size: 1.15rem;
+    }
+    .black-btn{
+        font-size: 1.1rem;
+    }
+    .section.divided .image{
+        width: 120px;
+        height: 120px;
+    }
+    .small-title{
+        font-size: 1.7rem;
+        width: 70%;
+    }
+    .section.divided .big-text{
+        font-size: 1.1rem;
+        line-height: 1.3;
+    }
+    .review-card{
+        width: 100%;
+    }
+    .review-card .review-img{
+        width: 65px;
+        height: 65px;
+    }
+    .review-card .review-name{
+        font-size: 1.2rem;
+    }
+    .review-card .review-data{
+        font-size: 1.1rem;
+    }
+    .review-card .review-content{
+        margin-top: 30px;
+        font-size: 1rem;
+    }
+    .section.voyage .section-content .create-panel{
+        width: 400px;
+    }
+    .create-panel .panel-title{
+        font-size: 1.7rem;
+    }
+    .dropdowns-box{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 3rem;
+    }
+    .dropdown{
+        width: 250px;
+    }
+    .send-button.enabled{
+        width: 170px;
+    }
+    .send-button{
+        top: auto;
+        right: auto;
+        bottom: -70px;
+        left: 0;
+    }
+    .left-info .dropdowns-box{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .panel-info .left-info{
+        margin-bottom: 0rem;
+    }
+    .right-info .white-overlay{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #F3F4F2 20%, transparent 100%);
+    }
+    .panel-info .panel-btn{
+        top: -70px;
+        right: -30px;
+    }
+    .right-info .destination-nombre{
+        font-size: 1.6rem;
+    }
+    .right-info .destination-era{
+        font-size: 1.15rem;
+    }
+    .right-info .destination-anacronismo{
+        font-size: 1rem;
+    }
+    .destination-anacronismo .anacronism-percentage{
+        font-size: 2.3rem;
+    }
+    .destination-mensaje{
+        width: 100%;
+        font-size: .9rem;
+    }
+    .destination-buyBtn{
+        margin-top: 20px;
+        margin-bottom: 0;
+        font-size: .9rem;
+    }
+    .little-panel{
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .little-panel .lt-panel-title{
+        font-size: 1.6rem;
+    }
+    .little-panel .lt-panel-text{
+        font-size: 1.15rem;
+        margin-bottom: 15px;
+    }
+    .little-panel .little-panel-times{
+        gap: 30px;
+        width: 400px;
+        background-color: #d9d9d9;
+        margin: 0;
+    }
+    .little-panel-times input{
+        width: 100px;
+        height: 40px;
+        overflow: visible;
+    }
+    .little-panel-times .travel-days{
+        width: 300px;
+    }
+    .left-details .travel-details{
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        gap: 10px;
+    }
+    .panel-pay-info .panel-btn{
+        top: -70px;
+        right: -30px;
+    }
+    .travel-details .dets{
+        width: 100%;
+    }
+    .panel-pay-info .details-text{
+        font-size: 1.1rem;
+    }
+    .right-details .precio-viaje{
+        font-size: 2.4rem;
+    }
+    .right-details .payment-box{
+        width: 100%;
+        position: relative;
+    }
+    .payment-box .field{
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .field label{
+        width: 100%;
+        font-size: 1.1rem;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .payment-box .field.spaced-field{
+        gap: 10px;
+    }
+    .field .ml{
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .message-panel{
+        background-color: transparent;
+    }
+    .message-panel .big-title{
+        font-size: 1.7rem
+    }
+    .message-panel .big-text{
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+    .message-panel a{
+        font-size: .9rem;
+        padding: 10px 15px;
+    }
+    .message-panel .options{
+        gap: 10px;
+    }
+    .message-panel button{
+        font-size: .9rem;
+        padding: 10px 20px;
+    }    
 
+    .section.faq-section .section-header{
+        width: 100%;
+    }
+    .section.faq-section .small-title{
+        width: 100%;
+    }
+    .section.faq-section .big-text{
+        width: 100%;
+    }
+    .section.faq-section .wrapper{
+        width: 100%;
+    }
+    .section.faq-section .wrapper .details{
+        padding: 15px 20px;
+    }
+    .section.divided.contact .contact-form{
+        width: 75%;
+    }
+    .footer-content .social-media {
+        gap: 20px;
+    }
+    .footer-content .social-media a{
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    .footer-content .page-links a{
+        font-size: 1.2rem;
+    }
+    .footer .copyright{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 650px ) {
+    .section{
+        padding: 1.5rem 4rem;
+    }
+    .header{
+        padding: 2rem 3rem;
+    }
+    .navbar .logo{
+        font-size: 2.2rem;
+    }
+    .section.hero{
+        height: 100vh;
+    }
+    .hero-title{
+        font-size: 2.15rem;
+    }
+    .big-text{
+        font-size: 1.05rem;
+    }
+    .black-btn{
+        font-size: 1.1rem;
+    }
+    .section.divided .image{
+        width: 120px;
+        height: 120px;
+    }
+    .small-title{
+        font-size: 1.8rem;
+        width: 65%;
+    }
+    .section.divided .big-text{
+        font-size: 1.15rem;
+        line-height: 1.35;
+    }
+    .review-card{
+        width: 100%;
+    }
+    .review-card .review-img{
+        width: 60px;
+        height: 60px;
+    }
+    .review-card .review-name{
+        font-size: 1.5rem;
+    }
+    .review-card .review-data{
+        font-size: 1rem;
+    }
+    .review-card .review-content{
+        margin-top: 30px;
+        font-size: .9rem;
+    }
+    .section.voyage .section-content .create-panel{
+        width: 400px;
+    }
+    .create-panel .panel-title{
+        font-size: 1.7rem;
+    }
+    .section.faq-section .section-header{
+        width: 100%;
+    }
+    .section.faq-section .small-title{
+        width: 100%;
+    }
+    .section.faq-section .big-text{
+        width: 100%;
+    }
+    .section.faq-section .wrapper{
+        width: 100%;
+    }
+    .section.faq-section .wrapper .details{
+        padding: 15px 20px;
+    }
+    .section.divided.contact .contact-form{
+        width: 400px;
+    }
+    .footer-content .social-media {
+        gap: 20px;
+    }
+    .footer-content .social-media a{
+        width: 60px;
+        height: 60px;
+        font-size: 1.7rem;
+    }
+    .footer-content .page-links a{
+        font-size: 1.15rem;
+        margin: 0 9px;
+    }
+    .footer .copyright{
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px ) {
+    body{
+        margin-top: 80px;
+    }
+    .section{
+        padding: 1.5rem 2.5rem;
+    }
+    .header{
+        padding: 1rem 2.5rem;
+    }
+    .navbar .logo{
+        font-size: 2rem;
+    }
+    .section.hero{
+        height: 95vh;
+    }
+    .hero-title{
+        font-size: 2.1rem;
+        margin-bottom: 35px;
+    }
+    .big-text{
+        font-size: 1.05rem;
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 0 5px;
+    }
+    .black-btn{
+        font-size: 1rem;
+        padding: 20px 35px;
+    }
+    .section.divided .image{
+        width: 120px;
+        height: 120px;
+        top: 40px;
+    }
+    .small-title{
+        font-size: 1.7rem;
+        width: 68%;
+    }
+    .section.divided .big-text{
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+    .section.reviews .section-content .section-header .big-text{
+        text-align: center;
+        color: #b0b0b0;
+        font-size: 1.15rem;
+    }
+    .review-card .review-img{
+        width: 65px;
+        height: 65px;
+    }
+    .review-card .review-name{
+        font-size: 1.25rem;
+    }
+    .review-card .review-data{
+        font-size: 1rem;
+    }
+    .review-card .review-content{
+        margin-top: 30px;
+        font-size: .95rem;
+    }
+    .section.divided.inverted{
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    .section.divided.inverted .image{
+        top: 10px;
+    }
+    .section.voyage .section-content .create-panel{
+        width: 400px;
+    }
+    .create-panel .panel-title{
+        font-size: 1.7rem;
+    }
+    .section.faq-section .small-title{
+        font-size: 1.7rem;
+    }
+    .section.faq-section .big-text{
+        padding: 0 5px;
+        font-size: 1.15rem;
+    }
+    .section.faq-section .wrapper{
+        width: 90%;
+    }
+    .section.faq-section .wrapper .summary{
+        padding-right: 12px;
+        font-size: 1.05rem;
+    }
+
+    .section.divided.contact{
+        padding: 4rem 2rem;
+    }
+    .section.divided.contact .section-content .left-content{
+        align-items: center;
+        justify-content: center;
+    }
+    .section.divided.contact .small-title{
+        font-size: 1.7rem;
+    }
+    .section.divided.contact .big-text{
+        font-size: 1.1rem;
+        width: 90%;
+    }
+    .section.divided.contact .contact-form{
+        width: 300px;
+        padding: 1.5rem;
+    }
+    .contact-form .label{
+        font-size: 1.1rem;
+        margin-bottom: 7px;
+    }
+    .contact-form input, textarea{
+        padding: .7rem .8rem;
+        font-size: .95rem;
+    }
+    .footer-content .social-media {
+        gap: 20px;
+    }
+    .footer{
+        padding: 2rem 2.5rem;
+    }
+    .footer-content .social-media a{
+        width: 55px;
+        height: 55px;
+        font-size: 1.6rem;
+    }
+    .footer-content .page-links a{
+        font-size: 1.1rem;
+        margin: 0 8px;
+    }
+    .footer .copyright{
+        padding-top: 30px;
+        font-size: .95rem;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 426px){
+    .nav{
+        width: 200px;
+    }
+    .link{
+        font-size: 1px;
+    }
+    body{
+        margin-top: 70px;
+    }
+    .section{
+        padding: 1.5rem 2.7rem;
+    }
+    .fa-bars::before{
+        font-size: 1.8rem;
+    }
+    .navbar .logo{
+        font-size: 1.9rem;
+    }
+    .section.hero{
+        height: 90vh;
+    }
+    .hero-title{
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .overlay{
+        height: 60%;
+    }
+    .big-text{
+        font-size: 1rem;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+    .black-btn{
+        font-size: 1rem;
+        padding: 20px 35px;
+    }
+    .section.divided .image{
+        width: 115px;
+        height: 115px;
+        right: -20px;
+    }
+    .section.divided.inverted .image{
+        right: -30px;
+    }
+    .small-title{
+        font-size: 1.7rem;
+        width: 70%;
+    }
+    .section.divided .big-text{
+        font-size: 1.15rem;
+        line-height: 1.4;
+    }
+    .section.voyage{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .section.voyage .section-content .create-panel{
+        width: 90%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        border-radius: 20px;
+        padding: 2rem;
+        padding-bottom: 4rem;
+        border-top: 1.5px solid var(--primary-black-color);
+        border-bottom: 1.5px solid var(--primary-black-color);
+    }
+    .panel-info .panel-btn{
+        top: -55px;
+        right: -25px;
+    }
+    .panel-sm-title{
+        font-size: 1.6rem
+    }
+    .panel-sm-text{
+        font-size: 1.1rem;
+    }
+    .hoursCost .hours-cost-input{
+       width: 250px;
+    }
+    .create-panel .panel-title{
+        font-size: 1.6rem;
+    }
+    .little-panel{
+        width: 100%;
+    }
+    .little-panel .little-panel-times{
+        width: 300px;
+        padding: 1rem 1.5rem;
+    }
+    .little-panel .lt-panel-title{
+        font-size: 1.5rem;
+    }
+    .little-panel .lt-panel-text{
+        font-size: 1.1rem;
+    }
+    .little-panel .bold-text{
+        font-size: 1rem;
+    }
+    .little-panel-times label{
+        font-size: 1.1rem;
+    }
+    .little-panel-times input{
+        font-size: .95rem;
+    }
+    .little-panel-times .travel-days{
+        width: 270px;
+    }
+    .section.faq-section .small-title{
+        font-size: 1.7rem;
+    }
+    .section.faq-section .big-text{
+        padding: 0 5px;
+        font-size: 1.15rem;
+    }
+    .section.faq-section .wrapper{
+        width: 90%;
+    }
+    .section.faq-section .wrapper .summary{
+        padding-right: 12px;
+        font-size: 1.05rem;
+    }
+
+}
+
+@media screen and (max-width: 376px){
+    .section{
+        padding: 1.5rem 2.3rem;
+    }
+    .fa-bars::before{
+        font-size: 1.7rem;
+    }
+    .navbar .logo{
+        font-size: 1.8rem;
+    }
+    .section.hero{
+        height: 95vh;
+    }
+    .hero-title{
+        font-size: 1.9rem;
+        width: 290px;
+    }
+    .overlay{
+        height: 50%;
+    }
+    .big-text{
+        font-size: 1.05rem;
+        padding: 0;
+        width: 290px;
+    }
+    .black-btn{
+        font-size: 1rem;
+        padding: 20px 30px;
+    }
+    .section.divided .image{
+        width: 90px;
+        height: 90px;
+        right: -10px;
+        bottom: -30px;
+        top: auto;
+    }
+    .section.divided.inverted .image{
+        top: auto;
+        bottom: -20px;
+        right: 0;
+    }
+    .small-title{
+        font-size: 1.75rem;
+        padding: 0;
+        width: 100%;
+    }
+    .section.divided .big-text{
+        font-size: 1.12rem;
+        width: 100%;
+    }
+    .section.faq-section .wrapper .summary{
+        padding-right: 15px;
+    }
+    .section.divided.contact .contact-form{
+        width: 280px;
+    }
+    .footer{
+        padding: 2rem;
+        height: auto;
+    }
+    .footer-content .social-media a{
+        width: 60px;
+        height: 60px;
+    }
+    .footer-content .page-links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .footer-content .page-links a{
+        font-size: 1.1rem;
+    }
+    .footer .copyright{
+        padding-top: 30px;
+        font-size: 1rem;
+        text-align: center;
+    }
+    .footer .copyright .designer{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 321px){
+    .create-panel .panel-title{
+        font-size: 1.5rem;
+    }
+    .create-panel .panel-text{
+        font-size: 1rem;
+    }
+    .dropdown{
+        width: 220px;
+    }
+    .hoursCost .hours-cost-input{
+        width: 220px;
+    }
+    .panel-sm-title{
+        font-size: 1.6rem;
+    }
+    .right-info .white-overlay{
+        background: linear-gradient(to right, #F3F4F2 10%, transparent 100%);
+    }
+    .panel-sm-text{
+        font-size: 1rem;
+    }
+    .panel-info .right-info{
+        border: none;
+        align-items: flex-start;
+        justify-items: flex-start;
+        text-align: left;
+    }
+    .section.voyage .section-content .create-panel{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
     
+
 
 }

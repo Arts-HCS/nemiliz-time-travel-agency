@@ -1031,6 +1031,7 @@
 .section.divided.contact .section-content .right-content{
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .section.divided.contact .contact-form{

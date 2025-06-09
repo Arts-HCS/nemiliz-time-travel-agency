@@ -1692,6 +1692,21 @@
 
 }
 
+@media screen and (max-width: 411px){
+    .hero-title{
+        font-size: 1.85rem;
+    }
+    .footer-content .social-media a{
+        width: 55px;
+        height: 55px;
+        font-size: 1.6rem;
+    }
+    .footer-content .page-links a{
+        font-size: 1rem;
+        margin: 0 5px;
+    }
+}
+
 @media screen and (max-width: 376px){
     .section{
         padding: 1.5rem 2.3rem;

@@ -1,43 +1,42 @@
 {
-    "op1": {
-      "epoca": "Prehistoria",
-      "nombre": "Paleolítico",
-      "anacronismo": "99%",
-      "mensaje": "Absolutamente todo sería muy extraño: sin lenguaje escrito, sin tecnología básica, sin sociedad organizada como la conocemos, creencias muy primitivas.",
-      "costo": 7800,
-      "img": "./images/panel-images/prehistoria_paleolitico.webp"
-    },
-    "op2": {
-      "epoca": "Edad Antigua",
-      "nombre": "Egipto",
-      "anacronismo": "90%",
-      "mensaje": "Civilizaciones muy diferentes, costumbres lejanas, religiones politeístas, tecnología limitada y modos de vida muy distintos.",
-      "costo": 5680,
-      "img": "./images/panel-images/edad_antigua.webp"
-    },
-    "op3": {
-      "epoca": "Edad Media",
-      "nombre": "Imperios islámicos",
-      "anacronismo": "85%",
-      "mensaje": "Aunque hay más estructura social y avances, todavía hay mucha diferencia en ciencia, medicina, religión dominante y mentalidad feudal.",
-      "costo": 6400,
-      "img": "./images/panel-images/edad_media.webp"
-    },
-    "op4": {
-      "epoca": "Edad Moderna",
-      "nombre": "Renacimiento",
-      "anacronismo": "65%",
-      "mensaje": "Mucho más cercano, con inventos como la imprenta, ciencia emergente, pero todavía diferencias importantes en derechos humanos, tecnología, religión y política.",
-      "costo": 4520,
-      "img": "./images/panel-images/edad_moderna.webp"
-    },
-    "op5": {
-      "epoca": "Edad Contemporánea",
-      "nombre": "Revolución Francesa",
-      "anacronismo": "30%",
-      "mensaje": "Más cercano a la actualidad, especialmente en el siglo XX, aunque hay diferencias evidentes en tecnología y valores sociales.",
-      "costo": 3500,
-      "img": "./images/panel-images/edad_contemporanea.webp"
-    }
+  "op1": {
+    "epoca": "Prehistoria",
+    "nombre": "Paleolítico",
+    "anacronismo": "99%",
+    "mensaje": "Absolutamente todo sería muy extraño: sinlenguaje escrito, sin tecnología básica, sin sociedadorganizada como la conocemos, creencias muy primitivas.",
+    "costo": 7800,
+    "img": "./images/panel-images/prehistoria_paleolitico.webp"
+  },
+  "op2": {
+    "epoca": "Edad Antigua",
+    "nombre": "Egipto",
+    "anacronismo": "90%",
+    "mensaje": "Civilizaciones muy diferentes, costumbres lejanas, religiones politeístas, tecnología limitada y modos de vida muy distintos.",
+    "costo": 5680,
+    "img": "./images/panel-images/edad_antigua.webp"
+  },
+  "op3": {
+    "epoca": "Edad Media",
+    "nombre": "Imperios islámicos",
+    "anacronismo": "85%",
+    "mensaje": "Aunque hay más estructura social y avances, todavía hay mucha diferencia en ciencia, medicina, religión dominante y mentalidad feudal.",
+    "costo": 6400,
+    "img": "./images/panel-images/edad_media.webp"
+  },
+  "op4": {
+    "epoca": "Edad Moderna",
+    "nombre": "Renacimiento",
+    "anacronismo": "65%",
+    "mensaje": "Mucho más cercano, con inventos como la imprenta, ciencia emergente, pero todavía diferencias importantes en derechos humanos, tecnología, religión y política.",
+    "costo": 4520,
+    "img": "./images/panel-images/edad_moderna.webp"
+  },
+  "op5": {
+    "epoca": "Edad Contemporánea",
+    "nombre": "Revolución Francesa",
+    "anacronismo": "30%",
+    "mensaje": "Más cercano a la actualidad, especialmente en el siglo XX, aunque hay diferencias evidentes en tecnología y valores sociales.",
+    "costo": 3500,
+    "img": "./images/panel-images/edad_contemporanea.webp"
   }
-  
+}

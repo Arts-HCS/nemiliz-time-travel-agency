@@ -337,7 +337,7 @@ function mostrarDestinoSeleccionado(costo, nombre, epoca, anacronismo, mensaje, 
     panelMensaje.classList.remove('nodisplay');
     panelBuyBtn.classList.remove('hidden-input');
 
-    imageSite.style.backgroundImage = `url('${imagen}')`;
+    imageSite.style.backgroundImage = `url("${imagen}")`;
 }
 
 function agregarDestinos(destOps, destinationsJSON) {
